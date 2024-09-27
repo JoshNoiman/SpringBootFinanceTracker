@@ -57,3 +57,25 @@ Example Scenarios:
 
 **Given** I set a savings goal, when I add income, 
 **then** the goal's progress should update. 
+
+## Class Diagram
+
+![Screenshot 2024-09-27 094544](https://github.com/user-attachments/assets/62834ced-ce29-4c7e-bd34-b9c02c522cdd)
+
+### Class Diagram Description
+
+**User:** Represents the user of the finance tracker app. Handles registration and login functionality. 
+
+**Transaction:** Represents an income or expense transaction, containing details like the amount, category, and date. Handles adding and retrieving transactions. 
+
+**Budget:** Represents a user-defined budget for a specific category, including the category name and allocated amount. Allows for budget creation and updates. 
+
+**FinancialGoal:** Represents a financial goal, including the target amount, current progress, and deadline. Handles goal setting and tracking progress. 
+
+**Account:** Represents the user’s financial account, including the balance and transactions. Handles income addition and balance calculations. 
+
+## Scrum Roles
+
+
+## Weekly Meeting
+
