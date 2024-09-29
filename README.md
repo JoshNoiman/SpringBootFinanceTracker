@@ -198,7 +198,7 @@ Here is the link if hyperlink is unavailable, https://github.com/JoshNoiman/Spri
 
 ## Scrum Board
 
-Link to Scrum/Kanban [Board:](https://github.com/users/slin05/projects/2)
+Link to Scrum/Kanban [Board.](https://github.com/users/slin05/projects/2)
 
 Here is the link if hyperlink is unavailable, https://github.com/users/slin05/projects/2
 
