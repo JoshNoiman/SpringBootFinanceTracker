@@ -95,4 +95,6 @@ Developer: Cage Wellman
 
 ## Weekly Meeting
 
-We meet every Monday at 4:30 via Microsoft Teams. [Weekly Meeting](https://teams.microsoft.com/l/meetup-join/19%3ameeting_YjBkNzhlMWUtNWY2YS00ZDVlLWJlODItYmZkMjA0YmRlNGFk%40thread.v2/0?context=%7b%22Tid%22%3a%22f5222e6c-5fc6-48eb-8f03-73db18203b63%22%2c%22Oid%22%3a%225c3543c8-3744-49c5-8d08-38615296d597%22%7d)
+ We meet every Monday at 4:30 via Microsoft Teams, found [here.](https://teams.microsoft.com/l/meetup-join/19%3ameeting_YjBkNzhlMWUtNWY2YS00ZDVlLWJlODItYmZkMjA0YmRlNGFk%40thread.v2/0?context=%7b%22Tid%22%3a%22f5222e6c-5fc6-48eb-8f03-73db18203b63%22%2c%22Oid%22%3a%225c3543c8-3744-49c5-8d08-38615296d597%22%7d)
+
+ Here is the link if hyperlink is unavailable, https://teams.microsoft.com/l/meetup-join/19%3ameeting_YjBkNzhlMWUtNWY2YS00ZDVlLWJlODItYmZkMjA0YmRlNGFk%40thread.v2/0?context=%7b%22Tid%22%3a%22f5222e6c-5fc6-48eb-8f03-73db18203b63%22%2c%22Oid%22%3a%225c3543c8-3744-49c5-8d08-38615296d597%22%7d
