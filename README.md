@@ -74,6 +74,123 @@ Example Scenarios:
 
 **Account:** Represents the user’s financial account, including the balance and transactions. Handles income addition and balance calculations. 
 
+## JSON Schema
+
+### JSON Schema For User
+
+```
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "type": "object",
+    "properties": {
+        "userID": {
+            "type": "integer"
+        },
+        "password": {
+            "type": "string"
+        },
+        "username": {
+            "type": "string"
+        }
+    },
+    "required": ["userID", "password", "username"]
+}
+```
+
+### JSON Schema For Transaction
+
+```
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "type": "object",
+    "properties": {
+        "transactionID": {
+            "type": "integer"
+        },
+        "amount": {
+            "type": "integer"
+        },
+        "category": {
+            "type": "string"
+        },
+        "date": {
+            "type": "integer"
+        }
+    },
+    "required": ["transactionID", "amount", "category", "date"]
+}
+
+```
+
+### JSON Schema For FinancialGoal
+
+```
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "type": "object",
+    "properties": {
+        "goalID": {
+            "type": "integer"
+        },
+        "targetAmount": {
+            "type": "integer"
+        },
+        "currentAmount": {
+            "type": "integer"
+        },
+        "dueDate": {
+            "type": "integer"
+        }
+    },
+    "required": ["goalID", "targetAmount", "currentAmount", "dueDate"]
+}
+
+```
+
+### JSON Schema For Account
+
+```
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "type": "object",
+    "properties": {
+        "accountID": {
+            "type": "integer"
+        },
+        "userID": {
+            "type": "integer"
+        },
+        "balance": {
+            "type": "integer"
+        }
+    },
+    "required": ["accountID", "userID", "balance"]
+}
+
+```
+
+### JSON Schema For Budget
+
+```
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "type": "object",
+    "properties": {
+        "budgetID": {
+            "type": "integer"
+        },
+        "category": {
+            "type": "string"
+        },
+        "amount": {
+            "type": "integer"
+        }
+    },
+    "required": ["budgetID", "category", "amount"]
+}
+
+```
+
 ## Project Link
 Our project is hosted in github, found [here.](https://github.com/JoshNoiman/SpringBootFinanceTracker)
 
