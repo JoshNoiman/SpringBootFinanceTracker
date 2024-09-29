@@ -75,7 +75,8 @@ Example Scenarios:
 **Account:** Represents the user’s financial account, including the balance and transactions. Handles income addition and balance calculations. 
 
 ## Project Link
-Our ptoject is hoted in github, found [here.](https://github.com/JoshNoiman/SpringBootFinanceTracker)
+Our project is hosted in github, found [here.](https://github.com/JoshNoiman/SpringBootFinanceTracker)
+
 Here is the link if hyperlink is unavailable, https://github.com/JoshNoiman/SpringBootFinanceTracker
 
 ## Scrum Board
