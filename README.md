@@ -75,7 +75,11 @@ Example Scenarios:
 **Account:** Represents the user’s financial account, including the balance and transactions. Handles income addition and balance calculations. 
 
 ## Scrum Roles
-
+Product Owner/Scrum Master/ UI/UX Specialist: Liz Atoyebi
+Developer/Github Admin: Josh Noiman
+Developer: Kyle Dejarnett
+Developer: Steven Lin
+Developer: Cage Wellman
 
 ## Weekly Meeting
 
