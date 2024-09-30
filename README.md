@@ -16,7 +16,7 @@ The application is user-friendly, focusing on simplicity while offering powerful
 
 [FinanceTracker Story Board](https://mailuc-my.sharepoint.com/:p:/g/personal/dejarnke_mail_uc_edu/ESzIoB7G1UFDj7PdxQgImJ0BSLLoNDhJMm471HpQWG-o_Q?wdOrigin=TEAMS-MAGLEV.p2p_ns.rwc&wdExp=TEAMS-TREATMENT&wdhostclicktime=1727453633285&web=1)
 
-![HomePage](https://github.com/user-attachments/assets/359b4997-bfe5-4f63-98fd-1f4bc3ef1199)
+![HomePage](https://github.com/slin05/SpringBootFinanceTracker/blob/master/Slide1.jpg)
 
 ![BudgetPage](https://github.com/user-attachments/assets/9de606e5-80be-4fd7-b1e1-b9262b7bca40)
 
