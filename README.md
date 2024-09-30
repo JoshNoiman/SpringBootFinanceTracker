@@ -18,9 +18,11 @@ The application is user-friendly, focusing on simplicity while offering powerful
 
 ![HomePage](https://github.com/slin05/SpringBootFinanceTracker/blob/master/Slide1.jpg)
 
-![BudgetPage](https://github.com/user-attachments/assets/9de606e5-80be-4fd7-b1e1-b9262b7bca40)
+![Income/Expense](https://github.com/slin05/SpringBootFinanceTracker/blob/master/Slide2.jpg)
 
-![GoalTracker](https://github.com/user-attachments/assets/91032160-8a81-4408-8b12-0ff507c66caa)
+![Budget](https://github.com/slin05/SpringBootFinanceTracker/blob/master/Slide3.jpg)
+
+![GoalTracker](https://github.com/slin05/SpringBootFinanceTracker/blob/master/Slide4.jpg)
 
 ## Functional Requirements
 
