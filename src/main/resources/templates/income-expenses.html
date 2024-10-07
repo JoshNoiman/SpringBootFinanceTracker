@@ -55,8 +55,45 @@
     </div>
 </header>
 
-<!-- Main Content -->
+<!-- Main Content Title -->
 <h2 class="sub-title text-center default-padding fw-bold"> Income / Expenses </h2>
+
+<!-- Main Content -->
+<div class="container mt-6 income-expenses-container">
+    <!-- Centered Square -->
+    <div class="mx-auto" id="main-square">
+        <!-- Income Box -->
+        <div class="mb-4">
+            <div class="d-flex">
+                <div class="p-2 bg-success text-white fw-bold border" id="income-box"> INCOME </div>
+            </div>
+            <form class="mt-2">
+                <input type="number" class="form-control" placeholder="Enter income amount">
+            </form>
+        </div>
+        <!-- Expenses Box -->
+        <div class="mb-4">
+            <div class="d-flex">
+                <div class="p-2 bg-danger text-white fw-bold border" id="expenses-box"> EXPENSES </div>
+            </div>
+            <form class="mt-2">
+                <input type="number" class="form-control" placeholder="Enter expense amount">
+            </form>
+        </div>
+        <!-- Summary Section -->
+        <div class="text-center">
+            <div class="p-2 text-white fw-bold d-inline-block" id="summary-box"> SUMMARY </div>
+            <form class="mt-2 d-flex justify-content-center">
+                <div class="input-group" style="max-width: 200px;">
+                    <span class="input-group-text">$</span>
+                    <input type="number" class="form-control" placeholder="Total">
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+
 
 
 </body>
