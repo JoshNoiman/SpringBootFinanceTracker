@@ -24,9 +24,10 @@
 
 #income-box {
     background-color: green;
-    border: 1px solid black
+    border: 2px solid black
 }
 
 #expense-box {
-    border: 1px solid black;
+    background-color: red;
+    border: 2px solid black;
 }
