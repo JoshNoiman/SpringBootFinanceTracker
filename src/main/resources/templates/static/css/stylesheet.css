@@ -21,3 +21,12 @@
 #summary-box {
     background-color: #0071c1;
 }
+
+#income-box {
+    background-color: green;
+    border: 1px solid black
+}
+
+#expense-box {
+    border: 1px solid black;
+}
