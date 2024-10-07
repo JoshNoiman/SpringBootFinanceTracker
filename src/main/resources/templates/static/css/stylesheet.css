@@ -11,3 +11,13 @@
 .default-padding {
     padding: 10px;
 }
+
+.income-expenses-container {
+    background-color: #82cbeb;
+    border: 2px solid black;
+    padding: 10px;
+}
+
+#summary-box {
+    background-color: #0071c1;
+}
