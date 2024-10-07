@@ -1,0 +1,47 @@
+.page-header {
+    background-color: #82cbeb;
+    border: 2px solid black;
+    padding: 10px;
+}
+
+.navigation-box {
+    background-color: #145f81;
+}
+
+.default-padding {
+    padding: 10px;
+}
+
+.income-expenses-container {
+    background-color: #82cbeb;
+    border: 2px solid black;
+    padding: 10px;
+}
+
+#summary-box {
+    background-color: #0071c1;
+}
+
+#income-box {
+    background-color: #4ea72f;
+    border: 2px solid black
+}
+
+#expenses-box {
+    background-color: red;
+    border: 2px solid black;
+}
+
+#summary-total {
+    background-color: darkgray;
+    border: 2px solid black;
+    font-weight: bold;
+    width: auto;
+    padding-right: 0;
+    padding-left: 0;
+}
+#dollar-span {
+    background-color: darkgray;
+    border: 2px solid black;
+    font-weight: bold;
+}

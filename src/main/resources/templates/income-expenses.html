@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Income and Expenses</title>
+
+    <!-- Bootstrap CDN -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="static/css/stylesheet.css">
+</head>
+<body>
+
+<header class="page-header">
+    <!-- Logo / Website Name -->
+    <div class="container mt-3">
+        <h1 class="text-center fw-bold">Finance Tracker</h1>
+
+        <!-- Navigation -->
+        <div class="row mt-5">
+            <!-- Home -->
+            <div class="col-md-3">
+                <a href="start.html" class="text-decoration-none">
+                    <div class="card text-center navigation-box">
+                        <div class="card-body">
+                            <h5 class="card-title text-white"> Home </h5>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <!-- Income/Expenses -->
+            <div class="col-md-3">
+                <a href="income-expenses.html" class="text-decoration-none">
+                    <div class="card text-center navigation-box">
+                        <div class="card-body">
+                            <h5 class="card-title text-white"> Income/Expenses </h5>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <!-- Budget -->
+            <div class="col-md-3">
+                <a href="budget.html" class="text-decoration-none">
+                    <div class="card text-center navigation-box">
+                        <div class="card-body">
+                            <h5 class="card-title text-white"> Budget </h5>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <!-- Goal Tracker -->
+            <div class="col-md-3">
+                <a href="goal-tracker.html" class="text-decoration-none">
+                    <div class="card text-center navigation-box">
+                        <div class="card-body">
+                            <h5 class="card-title text-white"> Goal Tracker </h5>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </div>
+</header>
+
+<!-- Main Content Title -->
+<h2 class="sub-title text-center default-padding fw-bold"> Income / Expenses </h2>
+
+<!-- Main Content -->
+<div class="container mt-6 income-expenses-container">
+    <!-- Centered Square -->
+    <div class="mx-auto" id="main-square">
+        <!-- Income Box -->
+        <div class="mb-4">
+            <div class="d-flex">
+                <div class="p-2 text-white fw-bold" id="income-box"> INCOME </div>
+            </div>
+            <form class="mt-2">
+                <input type="number" class="form-control" placeholder="Enter income amount">
+            </form>
+        </div>
+        <!-- Expenses Box -->
+        <div class="mb-4">
+            <div class="d-flex">
+                <div class="p-2 text-white fw-bold" id="expenses-box"> EXPENSES </div>
+            </div>
+            <form class="mt-2">
+                <input type="number" class="form-control" placeholder="Enter expense amount">
+            </form>
+        </div>
+        <!-- Summary Section -->
+        <div class="text-center">
+            <div class="p-2 text-white fw-bold d-inline-block" id="summary-box"> SUMMARY </div>
+            <form class="mt-2 d-flex justify-content-center">
+                <div class="input-group">
+                    <span class="input-group-text" id="dollar-span">$</span>
+                    <input type="text" class="form-control" id="summary-total" placeholder="Total">
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+
+
+
+</body>
+</html>
