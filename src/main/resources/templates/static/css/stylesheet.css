@@ -31,3 +31,17 @@
     background-color: red;
     border: 2px solid black;
 }
+
+#summary-total {
+    background-color: darkgray;
+    border: 2px solid black;
+    font-weight: bold;
+    width: auto;
+    padding-right: 0;
+    padding-left: 0;
+}
+#dollar-span {
+    background-color: darkgray;
+    border: 2px solid black;
+    font-weight: bold;
+}
