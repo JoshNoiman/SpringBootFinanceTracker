@@ -12,7 +12,9 @@ class SpringBootFinanceTrackerApplicationTests {
 
     @Test
     void addIncomeAndSubtractExpensesToGetNewValue() {
-
+        getUserIncome();
+        addUserIncome();
+        calculateUserBalance();
     }
 
 }
