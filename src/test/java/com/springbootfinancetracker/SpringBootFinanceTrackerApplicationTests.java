@@ -15,6 +15,13 @@ class SpringBootFinanceTrackerApplicationTests {
         getUserIncome();
         addUserIncome();
         calculateUserBalance();
+        returnUsersNewBalance();
     }
+    private void getUserIncome() {
+
+    }
+    private void addUserIncome() {}
+    private void calculateUserBalance() {}
+    private void returnUsersNewBalance() {}
 
 }
