@@ -10,4 +10,9 @@ class SpringBootFinanceTrackerApplicationTests {
     void contextLoads() {
     }
 
+    @Test
+    void addIncomeAndExpensesToGetNewValue() {
+
+    }
+
 }
