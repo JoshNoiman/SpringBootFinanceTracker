@@ -7,6 +7,6 @@ import lombok.Data;
 public class FinancialGoalDto {
     private Integer goalID;
     private Integer targetamount;
-    private Integer currentAmount;
-    private Date dueDate;
+    private String goalName;
+    private Date targetDate;
 }

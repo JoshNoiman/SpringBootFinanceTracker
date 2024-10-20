@@ -7,4 +7,5 @@ public class UserDto {
     private Integer userID;
     private String password;
     private String username;
+    private Double Income;
 }

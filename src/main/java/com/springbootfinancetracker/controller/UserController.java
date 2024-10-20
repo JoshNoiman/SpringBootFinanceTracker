@@ -13,15 +13,15 @@ import com.springbootfinancetracker.dto.UserDto;
 @RestController
 public class UserController {
 
-    @GetMapping("/user")
-    public List<UserDto> getAllUsers() {
-        return Arrays.asList(new UserDto());
-    }
+    // @GetMapping("/user")
+    // public List<UserDto> getAllUsers() {
+    //     return Arrays.asList(new UserDto());
+    // }
 
-    @PostMapping("/user")
-    public UserDto createUser(@RequestBody UserDto user) {
-        System.out.println(user);
-        return user;
-    }
+    // @PostMapping("/user")
+    // public UserDto createUser(@RequestBody UserDto user) {
+    //     System.out.println(user);
+    //     return user;
+    // }
 
 }
