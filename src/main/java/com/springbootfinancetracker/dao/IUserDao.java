@@ -1,5 +1,9 @@
 package com.springbootfinancetracker.dao;
 
-public interface IUserDao {
+import com.springbootfinancetracker.dto.UserDto;
+import java.util.List;
 
+public interface IUserDao {
+    UserDto save(UserDto user) throws Exception;
+    List<UserDto> fetchAll();
 }
