@@ -23,24 +23,4 @@ public class FinanceTrackerController {
     public String index() {
         return "start";
     }
-
-    @GetMapping("/user")
-    public ResponseEntity fetchAllUsers() {
-        return new ResponseEntity(HttpStatus.OK);
-    }
-
-    @GetMapping("/user/{id}")
-    public ResponseEntity fetchUserById(@PathVariable("id") String id) {
-        return new ResponseEntity(HttpStatus.OK);
-    }
-
-    @PostMapping(value="/user", consumes="application/jason", produces="application/jason")
-    public UserDto createUser(@RequestBody UserDto user) {
-        return user;
-    }
-
-    @DeleteMapping("/user/{id}/")
-    public ResponseEntity deleteUser(@PathVariable("id") String id) {
-        return new ResponseEntity(HttpStatus.OK);
-    }
 }
