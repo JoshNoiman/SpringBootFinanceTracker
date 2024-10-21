@@ -31,7 +31,7 @@ public class UserServiceStub implements IUserService {
 
     @Override
     public UserDto saveUser(UserDto newUser) throws Exception {
-        return userDao.save(newUser);
+        return userDao.saveUser(newUser);
     }
 
 }

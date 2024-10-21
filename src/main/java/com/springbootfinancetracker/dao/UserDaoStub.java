@@ -14,7 +14,7 @@ public class UserDaoStub implements IUserDao{
     Map<Integer, UserDto> allUsers = new HashMap<>(); 
 
     @Override
-    public UserDto save(UserDto user) throws Exception {
+    public UserDto saveUser(UserDto user) throws Exception {
         // TODO Auto-generated method stub
         allUsers.put(user.getUserID(), user);
         throw new UnsupportedOperationException("Unimplemented method 'save'");

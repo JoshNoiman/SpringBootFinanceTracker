@@ -4,6 +4,6 @@ import com.springbootfinancetracker.dto.UserDto;
 import java.util.List;
 
 public interface IUserDao {
-    UserDto save(UserDto user) throws Exception;
+    UserDto saveUser(UserDto user) throws Exception;
     List<UserDto> fetchAll();
 }
