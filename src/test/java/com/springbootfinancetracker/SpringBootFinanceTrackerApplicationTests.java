@@ -8,6 +8,7 @@ class SpringBootFinanceTrackerApplicationTests {
 
     @Test
     void contextLoads() {
+        
     }
 
 }
