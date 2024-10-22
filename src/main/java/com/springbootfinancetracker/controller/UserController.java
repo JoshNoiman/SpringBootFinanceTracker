@@ -14,24 +14,42 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.springbootfinancetracker.dto.UserDto;
 
+/**
+ * User class contoller
+ */
 @RestController
 public class UserController {
-
+    /**
+     * 
+     * @return all users
+     */
     @GetMapping("/user")
     public ResponseEntity fetchAllUsers() {
         return new ResponseEntity(HttpStatus.OK);
     }
-
+    /**
+     * 
+     * @param id
+     * @return specific user
+     */
     @GetMapping("/user/{id}")
     public ResponseEntity fetchUserById(@PathVariable("id") String id) {
         return new ResponseEntity(HttpStatus.OK);
     }
-
+    /**
+     * 
+     * @param user
+     * @return newly created user
+     */
     @PostMapping(value="/user", consumes="application/jason", produces="application/jason")
     public UserDto createUser(@RequestBody UserDto user) {
         return user;
     }
-
+    /**
+     * 
+     * @param id
+     * @return removal of user
+     */
     @DeleteMapping("/user/{id}/")
     public ResponseEntity deleteUser(@PathVariable("id") String id) {
         return new ResponseEntity(HttpStatus.OK);

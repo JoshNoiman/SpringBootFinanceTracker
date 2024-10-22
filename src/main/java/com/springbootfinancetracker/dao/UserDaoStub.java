@@ -9,10 +9,16 @@ import java.util.List;
 import java.util.ArrayList;
 
 @Repository
+/**
+ * 
+ */
 public class UserDaoStub implements IUserDao{
 
     Map<Integer, UserDto> allUsers = new HashMap<>(); 
 
+    /**
+     * Saves user
+     */
     @Override
     public UserDto saveUser(UserDto user) throws Exception {
         // TODO Auto-generated method stub
@@ -20,6 +26,9 @@ public class UserDaoStub implements IUserDao{
         throw new UnsupportedOperationException("Unimplemented method 'save'");
     }
 
+    /**
+     * @return all users from list
+     */
     @Override
     public List<UserDto> fetchAll() {
         List<UserDto> returnUsers = new ArrayList<>(allUsers.values());
