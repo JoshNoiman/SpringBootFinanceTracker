@@ -1,23 +1,27 @@
 package com.springbootfinancetracker.dao;
 
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
 import org.springframework.stereotype.Repository;
 
 import com.springbootfinancetracker.dto.UserDto;
-import java.util.Map;
-import java.util.HashMap;
-import java.util.List;
-import java.util.ArrayList;
 
-@Repository
 /**
- * 
+ * Stub implementation of IUserDao for testing purposes.
  */
-public class UserDaoStub implements IUserDao{
+@Repository
+public class UserDaoStub implements IUserDao {
 
-    Map<Integer, UserDto> allUsers = new HashMap<>(); 
+    private Map<Integer, UserDto> allUsers = new HashMap<>(); 
 
     /**
-     * Saves user
+     * Saves a user.
+     * @param user the user DTO
+     * @return the saved user DTO
+     * @throws Exception if an error occurs during saving
      */
     @Override
     public UserDto saveUser(UserDto user) throws Exception {
@@ -27,12 +31,12 @@ public class UserDaoStub implements IUserDao{
     }
 
     /**
-     * @return all users from list
+     * Fetches all users.
+     * @return the list of all user DTOs
      */
     @Override
     public List<UserDto> fetchAll() {
-        List<UserDto> returnUsers = new ArrayList<>(allUsers.values());
-        return returnUsers;
+        return new ArrayList<>(allUsers.values());
     }
 
 }

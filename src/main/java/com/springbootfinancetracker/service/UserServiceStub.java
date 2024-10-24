@@ -1,5 +1,7 @@
 package com.springbootfinancetracker.service;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -7,7 +9,7 @@ import com.springbootfinancetracker.dao.IUserDao;
 import com.springbootfinancetracker.dto.UserDto;
 
 /**
- * 
+ * Service class for user operations.
  */
 @Service
 public class UserServiceStub implements IUserService {
@@ -16,22 +18,24 @@ public class UserServiceStub implements IUserService {
     private IUserDao userDao;
 
     /**
-     * 
+     * Default constructor.
      */
     public UserServiceStub() {
 
     }
 
     /**
-     * 
-     * @param userDao
+     * Constructor with IUserDao parameter.
+     * @param userDao the user DAO
      */
     public UserServiceStub(IUserDao userDao) {
         this.userDao = userDao;
     }
 
     /**
-     * Creates a user with hard coded values for testing purposes
+     * Fetches a user by ID with hardcoded values for testing purposes.
+     * @param id the user ID
+     * @return the user DTO
      */
     @Override
     public UserDto fetchById(int id) {
@@ -43,11 +47,22 @@ public class UserServiceStub implements IUserService {
     }
 
     /**
-     * Saves new user
+     * Saves a new user.
+     * @param newUser the new user DTO
+     * @return the saved user DTO
+     * @throws Exception if an error occurs during saving
      */
     @Override
     public UserDto saveUser(UserDto newUser) throws Exception {
         return userDao.saveUser(newUser);
     }
 
+    /**
+     * Fetches all users.
+     * @return the list of all user DTOs
+     */
+    @Override
+    public List<UserDto> fetchAll() {
+        return userDao.fetchAll();
+    }
 }
