@@ -51,9 +51,7 @@ public class UserDaoStub implements IUserDao{
      */
     @Override
     public UserDto fetchUserById(int id) throws Exception {
-        UserDto fetchedUser = new UserDto();
-        fetchedUser.setUserId(id);
-        return fetchedUser;
+        return allUsers.get(id);
     }
 
 }
