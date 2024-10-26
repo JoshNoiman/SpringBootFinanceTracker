@@ -104,8 +104,33 @@ public class BudgetServiceTests {
     @Test
     public void testGetAllBudgets() throws Exception {
         // Arrange
+        BudgetDto budget1 = new BudgetDto();
+        budget1.setBudgetID(1);
+        budget1.setCategory("Toys");
+        budget1.setAmount(50);
+
+        BudgetDto budget2 = new BudgetDto();
+        budget2.setBudgetID(2);
+        budget2.setCategory("Makeup");
+        budget2.setAmount(100);
+
+        List<BudgetDto> budgets = Arrays.asList(budget1, budget2);
+        when(budgetDao.getAllBudgets()).thenReturn(budgets);
+
         // Act
+        List<BudgetDto> retrievedBudgets = budgetService.getBudgets();
+
         // Assert
+        assertNotNull(retrievedBudgets);
+        assertEquals(2, retrievedBudgets.size());
+
+        assertEquals("Toys", retrievedBudgets.get(0).getCategory());
+        assertEquals(Integer.valueOf(50), retrievedBudgets.get(0).getAmount());
+
+        assertEquals("Makeup", retrievedBudgets.get(1).getCategory());
+        assertEquals(Integer.valueOf(100), retrievedBudgets.get(1).getAmount());
+
+        verify(budgetDao, times(1)).getAllBudgets();
     }
 
 }
