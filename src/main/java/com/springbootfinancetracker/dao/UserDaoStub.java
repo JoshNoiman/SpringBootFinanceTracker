@@ -38,7 +38,7 @@ public class UserDaoStub implements IUserDao{
 
     /**
      * Grabs user specified by their associated id
-     * @param id
+     * @param id user's id
      * @return fetchedUser specified by id
      * @throws Exception
      */
