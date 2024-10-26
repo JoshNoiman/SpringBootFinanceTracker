@@ -40,8 +40,7 @@ public class UserDaoStub implements IUserDao{
      */
     @Override
     public List<UserDto> fetchAll() {
-        List<UserDto> returnUsers = new ArrayList<>(allUsers.values());
-        return returnUsers;
+        return new ArrayList<>(allUsers.values());
     }
 
     /**
