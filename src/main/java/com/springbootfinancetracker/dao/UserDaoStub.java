@@ -28,6 +28,14 @@ public class UserDaoStub implements IUserDao{
     }
 
     /**
+     * Method for testing
+     * @param user user to add
+     */
+    public void saveUserWithoutException(UserDto user) {
+        allUsers.put(user.getUserId(), user);
+    }
+
+    /**
      * @return all users from list
      */
     @Override
