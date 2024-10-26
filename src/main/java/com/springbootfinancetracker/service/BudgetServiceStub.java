@@ -42,6 +42,6 @@ public class BudgetServiceStub implements IBudgetService {
     @Override
     public List<BudgetDto> getBudgets() throws Exception {
         return List.of();
-    }]
+    }
 
 }
