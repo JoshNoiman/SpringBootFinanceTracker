@@ -14,6 +14,7 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.context.annotation.Scope;
 import org.springframework.test.context.junit4.SpringRunner;
 
+import java.util.Arrays;
 import java.util.List;
 
 import static org.junit.Assert.*;
@@ -61,11 +62,9 @@ public class UserServiceTests {
         user2.setUsername("Second User");
         user2.setPassword("Second Password");
 
-        if(userDao instanceof UserDaoStub) {
-            UserDaoStub userDaoStub = (UserDaoStub) userDao;
-            userDaoStub.saveUserWithoutException(user1);
-            userDaoStub.saveUserWithoutException(user2);
-        }
+        List<UserDto> mockedUsers = Arrays.asList(user1, user2);
+
+        when(userDao.fetchAll()).thenReturn(mockedUsers);
 
         // Act
         List<UserDto> fetchedUsers = userService.fetchAllUsers();
@@ -73,6 +72,12 @@ public class UserServiceTests {
         // Assert
         assertNotNull(fetchedUsers);
         assertEquals(2, fetchedUsers.size());
+        assertEquals(Integer.valueOf(1), fetchedUsers.get(0).getUserId());
+        assertEquals("First User", fetchedUsers.get(0).getUsername());
+        assertEquals(Integer.valueOf(2), fetchedUsers.get(1).getUserId());
+        assertEquals("Second User", fetchedUsers.get(1).getUsername());
+
+        verify(userDao, times(1)).fetchAll();
     }
 
     @Test
