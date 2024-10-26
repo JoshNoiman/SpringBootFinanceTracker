@@ -53,11 +53,7 @@ public class BudgetServiceStub implements IBudgetService {
      */
     @Override
     public BudgetDto getBudgetById(int id) throws Exception {
-        BudgetDto budget = new BudgetDto();
-        budget.setBudgetID(1);
-        budget.setAmount(200);
-        budget.setCategory("groceries");
-        return budget;
+        return budgetDao.getBudgetById(id);
     }
 
     /**
