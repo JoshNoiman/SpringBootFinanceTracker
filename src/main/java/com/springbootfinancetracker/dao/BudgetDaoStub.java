@@ -1,8 +1,10 @@
 package com.springbootfinancetracker.dao;
 
 import com.springbootfinancetracker.dto.BudgetDto;
+import com.springbootfinancetracker.dto.UserDto;
 import org.springframework.stereotype.Repository;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -47,7 +49,9 @@ public class BudgetDaoStub implements IBudgetDao {
      */
     @Override
     public BudgetDto getBudgetById(int id) throws Exception {
-        return null;
+        BudgetDto fetchedBudget = new BudgetDto();
+        fetchedBudget.setBudgetID(id);
+        return fetchedBudget;
     }
 
     /**
@@ -57,6 +61,7 @@ public class BudgetDaoStub implements IBudgetDao {
      */
     @Override
     public List<BudgetDto> getAllBudgets() throws Exception {
-        return List.of();
+        List<BudgetDto> allUserBudgets = new ArrayList<>(allBudgets.values());
+        return allUserBudgets;
     }
 }
