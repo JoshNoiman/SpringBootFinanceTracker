@@ -24,7 +24,7 @@ public class UserDaoStub implements IUserDao{
     public UserDto saveUser(UserDto user) throws Exception {
         // TODO Auto-generated method stub
         allUsers.put(user.getUserId(), user);
-        throw new UnsupportedOperationException("Unimplemented method 'save'");
+        return user;
     }
 
     /**
