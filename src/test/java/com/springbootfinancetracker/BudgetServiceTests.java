@@ -55,4 +55,12 @@ public class BudgetServiceTests {
 
     }
 
+    @Test
+    public void testUpdatingTheBudgetForUser() throws Exception {
+        // Arrange
+        // Act
+        // Assert
+    }
+
+
 }
