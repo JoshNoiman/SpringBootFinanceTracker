@@ -35,4 +35,14 @@ public class UserDaoStub implements IUserDao{
         return returnUsers;
     }
 
+    /**
+     * @param id
+     * @return
+     * @throws Exception
+     */
+    @Override
+    public UserDto fetchUserById(int id) throws Exception {
+        return null;
+    }
+
 }
