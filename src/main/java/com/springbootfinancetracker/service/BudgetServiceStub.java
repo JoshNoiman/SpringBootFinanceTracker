@@ -33,7 +33,7 @@ public class BudgetServiceStub implements IBudgetService {
      */
     @Override
     public BudgetDto createBudget(BudgetDto budget) throws Exception {
-        return null;
+        return budgetDao.createBudget(budget);
     }
 
     /**
