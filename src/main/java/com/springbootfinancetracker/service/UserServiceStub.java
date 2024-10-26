@@ -51,7 +51,7 @@ public class UserServiceStub implements IUserService {
      */
     @Override
     public List<UserDto> fetchAllUsers() throws Exception {
-        return List.of();
+        return userDao.fetchAll();
     }
 
     /**
