@@ -26,7 +26,7 @@ public class BudgetDaoStub implements IBudgetDao {
     public BudgetDto createBudget(BudgetDto budget) throws Exception {
         // TODO Auto-generated method stub
         allBudgets.put(budget.getBudgetID(), budget);
-        throw new UnsupportedOperationException("Unimplemented method 'save'");
+        return budget;
     }
 
     /**
