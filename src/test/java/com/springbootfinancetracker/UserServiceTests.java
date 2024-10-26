@@ -69,6 +69,9 @@ public class UserServiceTests {
         assertEquals(2, fetchedUsers.size());
     }
 
-
-
+    public void testSavedUserAndEnsureTestIsPassed() throws Exception {
+        // Arrange
+        // Act
+        // Assert
+    }
 }
