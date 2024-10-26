@@ -39,6 +39,15 @@ public class UserServiceTests {
 
     }
 
+    @Test
+    public void testFetchAllUsers() {
+        // Arrange
+
+        // Act
+
+        // Assert
+    }
+
 
 
 }
