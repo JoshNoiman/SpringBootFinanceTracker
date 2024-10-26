@@ -58,8 +58,24 @@ public class BudgetServiceTests {
     @Test
     public void testUpdatingTheBudgetForUser() throws Exception {
         // Arrange
+        BudgetDto budget = new BudgetDto();
+        budget.setBudgetID(1);
+        budget.setCategory("Shopping");
+        budget.setAmount(600);
+
+        when(budgetDao.updateBudget(budget)).thenReturn(budget);
+
         // Act
+        BudgetDto updatedBudget = budgetService.updateBudget(budget);
+
         // Assert
+        assertNotNull(updatedBudget);
+        assertEquals(Integer.valueOf(1), updatedBudget.getBudgetID());
+        assertEquals("Shopping", updatedBudget.getCategory());
+        assertEquals(Integer.valueOf(600), updatedBudget.getAmount());
+
+        verify(budgetDao, times(1)).updateBudget(budget);
+
     }
 
 
