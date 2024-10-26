@@ -17,6 +17,7 @@ public class BudgetDaoStub implements IBudgetDao {
     Map<Integer, BudgetDto> allBudgets = new HashMap<>();
 
     /**
+     * Saves budget to associated user
      * @param budgetDto
      * @return
      * @throws Exception
@@ -27,6 +28,7 @@ public class BudgetDaoStub implements IBudgetDao {
     }
 
     /**
+     * Updates budget to associated user
      * @param budgetDto
      * @return
      * @throws Exception
@@ -37,6 +39,7 @@ public class BudgetDaoStub implements IBudgetDao {
     }
 
     /**
+     * Get the budget from user Id
      * @param id
      * @return
      * @throws Exception
@@ -47,6 +50,7 @@ public class BudgetDaoStub implements IBudgetDao {
     }
 
     /**
+     * Grab all budgets stored
      * @return
      * @throws Exception
      */
