@@ -38,7 +38,10 @@ public class BudgetDaoStub implements IBudgetDao {
      */
     @Override
     public BudgetDto updateBudget(BudgetDto budget) throws Exception {
-        return null;
+        // TODO: Ensure budget matches the respecting userId
+        int budgetId = budget.getBudgetID();
+        allBudgets.put(budgetId, budget);
+        return budget;
     }
 
     /**
