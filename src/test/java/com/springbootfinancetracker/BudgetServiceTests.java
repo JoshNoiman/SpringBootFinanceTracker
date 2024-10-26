@@ -1,6 +1,7 @@
 package com.springbootfinancetracker;
 
 import com.springbootfinancetracker.dao.IBudgetDao;
+import com.springbootfinancetracker.dto.BudgetDto;
 import com.springbootfinancetracker.service.BudgetServiceStub;
 import jakarta.annotation.ManagedBean;
 import org.junit.Test;
@@ -34,8 +35,23 @@ public class BudgetServiceTests {
     @Test
     public void testCreatingTheBudgetForUser() throws Exception {
         // Arrange
+        BudgetDto budget = new BudgetDto();
+        budget.setBudgetID(1);
+        budget.setCategory("Groceries");
+        budget.setAmount(300);
+
+        when(budgetDao.createBudget(budget)).thenReturn(budget);
+
         // Act
+        BudgetDto createdBudget = budgetService.createBudget(budget);
+
         // Assert
+        assertNotNull(createdBudget);
+        assertEquals(Integer.valueOf(1), createdBudget.getBudgetID());
+        assertEquals("Groceries", createdBudget.getCategory());
+        assertEquals(Integer.valueOf(300), createdBudget.getAmount());
+
+        verify(budgetDao, times(1)).createBudget(budget);
 
     }
 
