@@ -23,7 +23,7 @@ public class UserDaoStub implements IUserDao{
     @Override
     public UserDto saveUser(UserDto user) throws Exception {
         // TODO Auto-generated method stub
-        allUsers.put(user.getUserID(), user);
+        allUsers.put(user.getUserId(), user);
         throw new UnsupportedOperationException("Unimplemented method 'save'");
     }
 
@@ -45,7 +45,7 @@ public class UserDaoStub implements IUserDao{
     @Override
     public UserDto fetchUserById(int id) throws Exception {
         UserDto fetchedUser = new UserDto();
-        fetchedUser.setUserID(id);
+        fetchedUser.setUserId(id);
         return fetchedUser;
     }
 
