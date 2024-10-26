@@ -1,7 +1,6 @@
 package com.springbootfinancetracker.dao;
 
 import com.springbootfinancetracker.dto.BudgetDto;
-import com.springbootfinancetracker.dto.UserDto;
 import org.springframework.stereotype.Repository;
 
 import java.util.ArrayList;
