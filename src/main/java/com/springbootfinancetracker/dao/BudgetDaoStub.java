@@ -1,7 +1,6 @@
 package com.springbootfinancetracker.dao;
 
 import com.springbootfinancetracker.dto.BudgetDto;
-import com.springbootfinancetracker.dto.UserDto;
 import org.springframework.stereotype.Repository;
 
 import java.util.HashMap;
@@ -18,23 +17,25 @@ public class BudgetDaoStub implements IBudgetDao {
 
     /**
      * Saves budget to associated user
-     * @param budgetDto
+     * @param budget
      * @return
      * @throws Exception
      */
     @Override
-    public BudgetDto createBudget(BudgetDto budgetDto) throws Exception {
-        return null;
+    public BudgetDto createBudget(BudgetDto budget) throws Exception {
+        // TODO Auto-generated method stub
+        allBudgets.put(budget.getBudgetID(), budget);
+        throw new UnsupportedOperationException("Unimplemented method 'save'");
     }
 
     /**
      * Updates budget to associated user
-     * @param budgetDto
+     * @param budget
      * @return
      * @throws Exception
      */
     @Override
-    public BudgetDto updateBudget(BudgetDto budgetDto) throws Exception {
+    public BudgetDto updateBudget(BudgetDto budget) throws Exception {
         return null;
     }
 
