@@ -34,9 +34,15 @@ public class UserServiceTests {
     private IUserDao userDao;
 
     @Test
-    public void testFetchByUserIdAndReturnFirstUserIdContents() {
+    public void testFetchByUserIdAndReturnFirstUserIdContents() throws Exception {
         // Arrange
         int userId = 1;
+        UserDto userBeingMocked = new UserDto();
+        userBeingMocked.setUserId(userId);
+        userBeingMocked.setUsername("Joe Brave");
+        userBeingMocked.setPassword("Pa$$w0rd");
+
+        when(userDao.fetchUserById(userId)).thenReturn(userBeingMocked);
 
         // Act
         UserDto user = userService.fetchById(userId);
@@ -46,6 +52,8 @@ public class UserServiceTests {
         assertEquals(Integer.valueOf(1), user.getUserId());
         assertEquals("Joe Brave", user.getUsername());
         assertEquals("Pa$$w0rd", user.getPassword());
+
+        verify(userDao, times(1)).fetchUserById(userId);
 
     }
 
