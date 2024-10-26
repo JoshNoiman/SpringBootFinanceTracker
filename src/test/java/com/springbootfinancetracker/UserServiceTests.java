@@ -69,9 +69,21 @@ public class UserServiceTests {
         assertEquals(2, fetchedUsers.size());
     }
 
+    @Test
     public void testSavedUserAndEnsureTestIsPassed() throws Exception {
         // Arrange
-        // Act
-        // Assert
+        UserDto newCreatedUser = new UserDto();
+        newCreatedUser.setUserId(3);
+        newCreatedUser.setUsername("User 3");
+        newCreatedUser.setPassword("Password 3");
+
+        // Act and Assert
+        try {
+            userService.saveUser(newCreatedUser);
+            fail("Expected UnsupportedOperationException");
+        }
+        catch (UnsupportedOperationException e) {
+            System.out.println("Test Passed");
+        }
     }
 }
