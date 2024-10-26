@@ -1,5 +1,7 @@
 package com.springbootfinancetracker;
 
+import com.springbootfinancetracker.dao.IBudgetDao;
+import com.springbootfinancetracker.service.BudgetServiceStub;
 import jakarta.annotation.ManagedBean;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -21,5 +23,20 @@ import static org.mockito.Mockito.*;
 @ManagedBean
 @Scope("session")
 public class BudgetServiceTests {
+
+    @Autowired
+    @InjectMocks
+    private BudgetServiceStub budgetService;
+
+    @MockBean
+    private IBudgetDao budgetDao;
+
+    @Test
+    public void testCreatingTheBudgetForUser() throws Exception {
+        // Arrange
+        // Act
+        // Assert
+
+    }
 
 }
