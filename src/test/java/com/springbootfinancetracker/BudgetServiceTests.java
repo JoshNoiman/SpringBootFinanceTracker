@@ -81,8 +81,24 @@ public class BudgetServiceTests {
     @Test
     public void testGetBudgetById() throws Exception {
         // Arrange
+        int budgetId = 1;
+        BudgetDto budget = new BudgetDto();
+        budget.setBudgetID(budgetId);
+        budget.setCategory("Gas");
+        budget.setAmount(100);
+
+        when(budgetDao.getBudgetById(budgetId)).thenReturn(budget);
+
         // Act
+        BudgetDto retrievedBudget = budgetService.getBudgetById(budgetId);
+
         // Assert
+        assertNotNull(retrievedBudget);
+        assertEquals(Integer.valueOf(budgetId), retrievedBudget.getBudgetID());
+        assertEquals("Gas", retrievedBudget.getCategory());
+        assertEquals(Integer.valueOf(100), retrievedBudget.getAmount());
+
+        verify(budgetDao, times(1)).getBudgetById(budgetId);
     }
 
 
