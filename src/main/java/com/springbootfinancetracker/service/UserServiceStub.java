@@ -36,12 +36,8 @@ public class UserServiceStub implements IUserService {
      * Creates a user with hard coded values for testing purposes
      */
     @Override
-    public UserDto fetchById(int id) {
-        UserDto user = new UserDto();
-        user.setUsername("Joe Brave");
-        user.setPassword("Pa$$w0rd");
-        user.setUserId(1);
-        return user;
+    public UserDto fetchById(int id) throws Exception {
+        return userDao.fetchUserById(id);
     }
 
     /**
