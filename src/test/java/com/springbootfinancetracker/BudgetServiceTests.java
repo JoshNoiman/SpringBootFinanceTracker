@@ -101,5 +101,11 @@ public class BudgetServiceTests {
         verify(budgetDao, times(1)).getBudgetById(budgetId);
     }
 
+    @Test
+    public void testGetAllBudgets() throws Exception {
+        // Arrange
+        // Act
+        // Assert
+    }
 
 }
