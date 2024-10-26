@@ -1,6 +1,8 @@
 package com.springbootfinancetracker.dao;
 
 import com.springbootfinancetracker.dto.UserDto;
+import org.springframework.boot.context.config.InactiveConfigDataAccessException;
+
 import java.util.List;
 
 /**
@@ -16,5 +18,12 @@ public interface IUserDao {
      * 
      * @return all users
      */
-    List<UserDto> fetchAll();
+    List<UserDto> fetchAll() throws Exception;
+
+    /**
+     * Grab user by their associated ID
+     * @param id
+     * @return user
+     */
+    UserDto fetchUserById(int id) throws Exception;
 }
