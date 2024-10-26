@@ -78,5 +78,12 @@ public class BudgetServiceTests {
 
     }
 
+    @Test
+    public void testGetBudgetById() throws Exception {
+        // Arrange
+        // Act
+        // Assert
+    }
+
 
 }
