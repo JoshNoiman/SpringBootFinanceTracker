@@ -1,6 +1,7 @@
 package com.springbootfinancetracker;
 
 import com.springbootfinancetracker.dao.IUserDao;
+import com.springbootfinancetracker.dto.UserDto;
 import com.springbootfinancetracker.service.IUserService;
 import com.springbootfinancetracker.service.UserServiceStub;
 import org.junit.Test;
@@ -18,15 +19,19 @@ import org.springframework.test.context.junit4.SpringRunner;
 public class UserServiceTests {
 
     @Autowired
-    @InjectMocks
     private UserServiceStub userService;
 
-    @MockBean
+    @Autowired
     private IUserDao userDao;
 
     @Test
-    public void testFetchById() {
+    public void testFetchByUserIdAndReturnFirstId() {
+        // Arrange
+        int userId = 1;
 
+        // Act
+
+        // Assert
     }
 
 
