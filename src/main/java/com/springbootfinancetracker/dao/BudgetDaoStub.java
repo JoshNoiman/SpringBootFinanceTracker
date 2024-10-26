@@ -1,9 +1,14 @@
 package com.springbootfinancetracker.dao;
 
 import com.springbootfinancetracker.dto.BudgetDto;
+import org.springframework.stereotype.Repository;
 
 import java.util.List;
 
+@Repository
+/**
+ *
+ */
 public class BudgetDaoStub implements IBudgetDao {
 
     /**
