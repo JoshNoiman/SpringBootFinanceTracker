@@ -1,5 +1,6 @@
 package com.springbootfinancetracker.dao;
 
+import org.apache.catalina.User;
 import org.springframework.stereotype.Repository;
 
 import com.springbootfinancetracker.dto.UserDto;
@@ -36,13 +37,16 @@ public class UserDaoStub implements IUserDao{
     }
 
     /**
+     * Grabs user specified by their associated Id
      * @param id
-     * @return
+     * @return fetchedUser specified by Id
      * @throws Exception
      */
     @Override
     public UserDto fetchUserById(int id) throws Exception {
-        return null;
+        UserDto fetchedUser = new UserDto();
+        fetchedUser.setUserID(id);
+        return fetchedUser;
     }
 
 }
