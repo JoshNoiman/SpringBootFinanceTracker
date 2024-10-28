@@ -26,4 +26,15 @@ public interface IUserDao {
      * @return user
      */
     UserDto fetchUserById(int id) throws Exception;
+    /*
+     * Sets the user's ID, UserName, and Password
+     * @params The user ID to be set, as well as the Password and the Username
+     */
+    String RegisterUser(UserDto newUser);
+    /*
+     * Checks the entered Username and Password to see if it matches any accounts
+     * 
+     * @params The UserName and ID to be checked
+     */
+    String LoginUser(String userName, String password);
 }
