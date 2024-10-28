@@ -7,8 +7,8 @@ import lombok.Data;
  */
 @Data
 public class UserDto {
-    private Integer userID;
+    private Integer userId;
     private String password;
     private String username;
-    private Double Income;
+    private Double income;
 }

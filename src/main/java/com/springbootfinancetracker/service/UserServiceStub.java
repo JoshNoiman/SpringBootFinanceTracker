@@ -6,6 +6,8 @@ import org.springframework.stereotype.Service;
 import com.springbootfinancetracker.dao.IUserDao;
 import com.springbootfinancetracker.dto.UserDto;
 
+import java.util.List;
+
 /**
  * 
  */
@@ -34,12 +36,18 @@ public class UserServiceStub implements IUserService {
      * Creates a user with hard coded values for testing purposes
      */
     @Override
-    public UserDto fetchById(int id) {
-        UserDto user = new UserDto();
-        user.setUsername("Joe Brave");
-        user.setPassword("Pa$$w0rd");
-        user.setUserID(1);
-        return user;
+    public UserDto fetchById(int id) throws Exception {
+        return userDao.fetchUserById(id);
+    }
+
+    /**
+     * Grab all users currently saved
+     * @return list of all users
+     * @throws Exception
+     */
+    @Override
+    public List<UserDto> fetchAllUsers() throws Exception {
+        return userDao.fetchAll();
     }
 
     /**

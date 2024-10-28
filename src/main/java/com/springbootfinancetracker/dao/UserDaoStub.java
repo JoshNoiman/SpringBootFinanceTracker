@@ -1,5 +1,6 @@
 package com.springbootfinancetracker.dao;
 
+import org.apache.catalina.User;
 import org.springframework.stereotype.Repository;
 
 import com.springbootfinancetracker.dto.UserDto;
@@ -22,8 +23,16 @@ public class UserDaoStub implements IUserDao{
     @Override
     public UserDto saveUser(UserDto user) throws Exception {
         // TODO Auto-generated method stub
-        allUsers.put(user.getUserID(), user);
-        throw new UnsupportedOperationException("Unimplemented method 'save'");
+        allUsers.put(user.getUserId(), user);
+        return user;
+    }
+
+    /**
+     * Method for testing
+     * @param user user to add
+     */
+    public void saveUserWithoutException(UserDto user) {
+        allUsers.put(user.getUserId(), user);
     }
 
     /**
@@ -31,8 +40,18 @@ public class UserDaoStub implements IUserDao{
      */
     @Override
     public List<UserDto> fetchAll() {
-        List<UserDto> returnUsers = new ArrayList<>(allUsers.values());
-        return returnUsers;
+        return new ArrayList<>(allUsers.values());
+    }
+
+    /**
+     * Grabs user specified by their associated id
+     * @param id user's id
+     * @return fetchedUser specified by id
+     * @throws Exception
+     */
+    @Override
+    public UserDto fetchUserById(int id) throws Exception {
+        return allUsers.get(id);
     }
 
     /**
