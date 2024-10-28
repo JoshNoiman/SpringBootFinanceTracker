@@ -77,8 +77,13 @@
 }
 
 
-#whiteBlock {
+#budgetContainer h3 {
     position: relative;
     background-color: white;
     padding: 10px; /* Adjust padding as needed */
+}
+
+.center-container {
+    display: flex;
+    justify-content: center;
 }
