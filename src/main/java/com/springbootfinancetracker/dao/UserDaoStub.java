@@ -1,6 +1,4 @@
 package com.springbootfinancetracker.dao;
-
-import org.apache.catalina.User;
 import org.springframework.stereotype.Repository;
 
 import com.springbootfinancetracker.dto.UserDto;
@@ -67,7 +65,7 @@ public class UserDaoStub implements IUserDao{
 
         // Check if the user is already registered
         for (UserDto user : users) {
-            if (newUser.getUserID() == user.getUserID()) {
+            if (newUser.getUserId() == user.getUserId()) {
                 return "Error: this user is already registered in the system.";
             }
         }

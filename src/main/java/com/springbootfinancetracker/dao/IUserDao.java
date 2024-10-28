@@ -1,7 +1,6 @@
 package com.springbootfinancetracker.dao;
 
 import com.springbootfinancetracker.dto.UserDto;
-import org.springframework.boot.context.config.InactiveConfigDataAccessException;
 
 import java.util.List;
 
