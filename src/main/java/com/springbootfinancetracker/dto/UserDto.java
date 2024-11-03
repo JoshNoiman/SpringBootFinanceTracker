@@ -2,6 +2,8 @@ package com.springbootfinancetracker.dto;
 
 import lombok.Data;
 
+import java.math.BigDecimal;
+
 /**
  * User Data Transfer Object
  */
@@ -10,5 +12,6 @@ public class UserDto {
     private Integer userId;
     private String password;
     private String username;
-    private Double income;
+    private BigDecimal income = BigDecimal.ZERO;
+
 }
