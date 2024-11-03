@@ -10,9 +10,7 @@ import java.util.List;
 import java.util.ArrayList;
 
 @Repository
-/**
- * 
- */
+
 public class UserDaoStub implements IUserDao{
 
     Map<Integer, UserDto> allUsers = new HashMap<>(); 
@@ -67,7 +65,7 @@ public class UserDaoStub implements IUserDao{
 
         // Check if the user is already registered
         for (UserDto user : users) {
-            if (newUser.getUserID() == user.getUserID()) {
+            if (newUser.getUserId() == user.getUserId()) {
                 return "Error: this user is already registered in the system.";
             }
         }
@@ -102,6 +100,6 @@ public class UserDaoStub implements IUserDao{
             }
         }
         // If no match was found for the userName
-        return "Error: Incorect Password / Username";
+        return "Error: Incorrect Password / Username";
     }
 }

@@ -6,7 +6,7 @@ import lombok.Data;
 @Data
 public class FinancialGoalDto {
     private Integer goalID;
-    private Integer targetamount;
+    private Integer targetAmount;
     private String goalName;
     private Date targetDate;
 }

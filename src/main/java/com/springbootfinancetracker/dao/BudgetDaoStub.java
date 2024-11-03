@@ -9,9 +9,7 @@ import java.util.List;
 import java.util.Map;
 
 @Repository
-/**
- *
- */
+
 public class BudgetDaoStub implements IBudgetDao {
 
     Map<Integer, BudgetDto> allBudgets = new HashMap<>();
