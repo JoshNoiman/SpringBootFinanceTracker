@@ -55,6 +55,16 @@ public class BudgetServiceTests {
 
     }
 
+    // Test that creating a budget with null should throw an exception
+    @Test(expected = IllegalArgumentException.class)
+    public void testCreatingBudgetWithNullShouldThrowException() {
+        // Act
+        budgetService.createBudget(null);
+
+        // Assert
+        // Expect IllegalArgumentException to be thrown
+    }
+
     @Test
     public void testUpdatingTheBudgetForUser() throws Exception {
         // Arrange
@@ -78,6 +88,16 @@ public class BudgetServiceTests {
 
     }
 
+    // Test that updating a budget with null should throw an exception
+    @Test(expected = IllegalArgumentException.class)
+    public void testUpdatingBudgetWithNullShouldThrowException() {
+        // Act
+        budgetService.updateBudget(null);
+
+        // Assert
+        // Expect IllegalArgumentException to be thrown
+    }
+
     @Test
     public void testGetBudgetById() throws Exception {
         // Arrange
@@ -99,6 +119,19 @@ public class BudgetServiceTests {
         assertEquals(Integer.valueOf(100), retrievedBudget.getAmount());
 
         verify(budgetDao, times(1)).getBudgetById(budgetId);
+    }
+
+    // Test that getting a budget with an invalid id should throw an exception
+    @Test(expected = IllegalArgumentException.class)
+    public void testGetBudgetByInvalidIdShouldThrowException() {
+        // Arrange
+        int invalidId = -1;
+
+        // Act
+        budgetService.getBudgetById(invalidId);
+
+        // Assert
+        // Expect IllegalArgumentException to be thrown
     }
 
     @Test
@@ -131,6 +164,19 @@ public class BudgetServiceTests {
         assertEquals(Integer.valueOf(100), retrievedBudgets.get(1).getAmount());
 
         verify(budgetDao, times(1)).getAllBudgets();
+    }
+
+    // Test that getting all budgets with a DAO exception should throw a runtime exception
+    @Test(expected = RuntimeException.class)
+    public void testGetAllBudgetsWithDaoExceptionShouldThrowRuntimeException() {
+        // Arrange
+        willThrow(new RuntimeException("Database access error")).given(budgetDao).getAllBudgets();
+
+        // Act
+        budgetService.getBudgets();
+
+        // Assert
+        // Expect RuntimeException to be thrown
     }
 
 }
