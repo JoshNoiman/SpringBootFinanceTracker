@@ -32,6 +32,12 @@ public class BudgetServiceTests {
     @MockBean
     private IBudgetDao budgetDao;
 
+    /**
+     * Tests the creation of a valid budget entry.
+     * Verifies that the created budget matches the input values and
+     * that the budgetDao's createBudget method is called once.
+     * @throws Exception if there is an error during budget creation
+     */
     @Test
     public void testCreatingTheBudgetForUser() throws Exception {
         // Arrange
@@ -65,6 +71,12 @@ public class BudgetServiceTests {
         // Expect IllegalArgumentException to be thrown
     }
 
+    /**
+     * Tests updating an existing budget entry with new values.
+     * Verifies that the updated budget matches the input values and
+     * that the budgetDao's updateBudget method is called once.
+     * @throws Exception if there is an error during budget update
+     */
     @Test
     public void testUpdatingTheBudgetForUser() throws Exception {
         // Arrange
@@ -98,6 +110,12 @@ public class BudgetServiceTests {
         // Expect IllegalArgumentException to be thrown
     }
 
+    /**
+     * Tests retrieving a budget by ID with a valid ID.
+     * Verifies that the retrieved budget matches the expected ID and values,
+     * and that the budgetDao's getBudgetById method is called once.
+     * @throws Exception if there is an error during budget retrieval
+     */
     @Test
     public void testGetBudgetById() throws Exception {
         // Arrange
@@ -134,6 +152,12 @@ public class BudgetServiceTests {
         // Expect IllegalArgumentException to be thrown
     }
 
+    /**
+     * Tests retrieving all budgets from the service.
+     * Verifies that the returned list matches the expected values and
+     * that the budgetDao's getAllBudgets method is called once.
+     * @throws Exception if there is an error during budget retrieval
+     */
     @Test
     public void testGetAllBudgets() throws Exception {
         // Arrange
