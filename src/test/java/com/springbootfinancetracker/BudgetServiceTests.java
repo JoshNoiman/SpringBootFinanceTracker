@@ -13,6 +13,7 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.context.annotation.Scope;
 import org.springframework.test.context.junit4.SpringRunner;
 
+import java.math.BigDecimal;
 import java.util.Arrays;
 import java.util.List;
 
@@ -38,7 +39,7 @@ public class BudgetServiceTests {
         BudgetDto budget = new BudgetDto();
         budget.setBudgetID(1);
         budget.setCategory("Groceries");
-        budget.setAmount(300);
+        budget.setAmount(BigDecimal.valueOf(300));
 
         when(budgetDao.createBudget(budget)).thenReturn(budget);
 
@@ -49,7 +50,7 @@ public class BudgetServiceTests {
         assertNotNull(createdBudget);
         assertEquals(Integer.valueOf(1), createdBudget.getBudgetID());
         assertEquals("Groceries", createdBudget.getCategory());
-        assertEquals(Integer.valueOf(300), createdBudget.getAmount());
+        assertEquals(BigDecimal.valueOf(300), createdBudget.getAmount());
 
         verify(budgetDao, times(1)).createBudget(budget);
 
@@ -61,7 +62,7 @@ public class BudgetServiceTests {
         BudgetDto budget = new BudgetDto();
         budget.setBudgetID(1);
         budget.setCategory("Shopping");
-        budget.setAmount(600);
+        budget.setAmount(BigDecimal.valueOf(600));
 
         when(budgetDao.updateBudget(budget)).thenReturn(budget);
 
@@ -72,7 +73,7 @@ public class BudgetServiceTests {
         assertNotNull(updatedBudget);
         assertEquals(Integer.valueOf(1), updatedBudget.getBudgetID());
         assertEquals("Shopping", updatedBudget.getCategory());
-        assertEquals(Integer.valueOf(600), updatedBudget.getAmount());
+        assertEquals(BigDecimal.valueOf(600), updatedBudget.getAmount());
 
         verify(budgetDao, times(1)).updateBudget(budget);
 
@@ -85,7 +86,7 @@ public class BudgetServiceTests {
         BudgetDto budget = new BudgetDto();
         budget.setBudgetID(budgetId);
         budget.setCategory("Gas");
-        budget.setAmount(100);
+        budget.setAmount(BigDecimal.valueOf(100));
 
         when(budgetDao.getBudgetById(budgetId)).thenReturn(budget);
 
@@ -96,7 +97,7 @@ public class BudgetServiceTests {
         assertNotNull(retrievedBudget);
         assertEquals(Integer.valueOf(budgetId), retrievedBudget.getBudgetID());
         assertEquals("Gas", retrievedBudget.getCategory());
-        assertEquals(Integer.valueOf(100), retrievedBudget.getAmount());
+        assertEquals(BigDecimal.valueOf(100), retrievedBudget.getAmount());
 
         verify(budgetDao, times(1)).getBudgetById(budgetId);
     }
@@ -107,12 +108,12 @@ public class BudgetServiceTests {
         BudgetDto budget1 = new BudgetDto();
         budget1.setBudgetID(1);
         budget1.setCategory("Toys");
-        budget1.setAmount(50);
+        budget1.setAmount(BigDecimal.valueOf(50));
 
         BudgetDto budget2 = new BudgetDto();
         budget2.setBudgetID(2);
         budget2.setCategory("Makeup");
-        budget2.setAmount(100);
+        budget2.setAmount(BigDecimal.valueOf(100));
 
         List<BudgetDto> budgets = Arrays.asList(budget1, budget2);
         when(budgetDao.getAllBudgets()).thenReturn(budgets);
@@ -125,10 +126,10 @@ public class BudgetServiceTests {
         assertEquals(2, retrievedBudgets.size());
 
         assertEquals("Toys", retrievedBudgets.get(0).getCategory());
-        assertEquals(Integer.valueOf(50), retrievedBudgets.get(0).getAmount());
+        assertEquals(BigDecimal.valueOf(50), retrievedBudgets.get(0).getAmount());
 
         assertEquals("Makeup", retrievedBudgets.get(1).getCategory());
-        assertEquals(Integer.valueOf(100), retrievedBudgets.get(1).getAmount());
+        assertEquals(BigDecimal.valueOf(100), retrievedBudgets.get(1).getAmount());
 
         verify(budgetDao, times(1)).getAllBudgets();
     }

@@ -23,4 +23,13 @@ public class FinanceTrackerController {
     public String index() {
         return "start";
     }
+
+    @RequestMapping("/income-expenses.html")
+    public String incomeAndExpenses() {
+        return "income-expenses";
+    }
+    @RequestMapping("/budget.html")
+    public String budget() {
+        return "budget";
+    }
 }

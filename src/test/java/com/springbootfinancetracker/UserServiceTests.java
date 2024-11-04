@@ -36,24 +36,24 @@ public class UserServiceTests {
     @Test
     public void testFetchByUserIdAndReturnFirstUserIdContents() throws Exception {
         // Arrange
-        int userId = 1;
+        int userID = 1;
         UserDto userBeingMocked = new UserDto();
-        userBeingMocked.setUserId(userId);
+        userBeingMocked.setUserID(userID);
         userBeingMocked.setUsername("Joe Brave");
         userBeingMocked.setPassword("Pa$$w0rd");
 
-        when(userDao.fetchUserById(userId)).thenReturn(userBeingMocked);
+        when(userDao.fetchUserById(userID)).thenReturn(userBeingMocked);
 
         // Act
-        UserDto user = userService.fetchById(userId);
+        UserDto user = userService.fetchById(userID);
 
         // Assert
         assertNotNull(user);
-        assertEquals(Integer.valueOf(1), user.getUserId());
+        assertEquals(Integer.valueOf(1), user.getUserID());
         assertEquals("Joe Brave", user.getUsername());
         assertEquals("Pa$$w0rd", user.getPassword());
 
-        verify(userDao, times(1)).fetchUserById(userId);
+        verify(userDao, times(1)).fetchUserById(userID);
 
     }
 
@@ -61,12 +61,12 @@ public class UserServiceTests {
     public void testFetchAllUsers() throws Exception {
         // Arrange
         UserDto user1 = new UserDto();
-        user1.setUserId(1);
+        user1.setUserID(1);
         user1.setUsername("First User");
         user1.setPassword("First Password");
 
         UserDto user2 = new UserDto();
-        user2.setUserId(2);
+        user2.setUserID(2);
         user2.setUsername("Second User");
         user2.setPassword("Second Password");
 
@@ -80,9 +80,9 @@ public class UserServiceTests {
         // Assert
         assertNotNull(fetchedUsers);
         assertEquals(2, fetchedUsers.size());
-        assertEquals(Integer.valueOf(1), fetchedUsers.get(0).getUserId());
+        assertEquals(Integer.valueOf(1), fetchedUsers.get(0).getUserID());
         assertEquals("First User", fetchedUsers.get(0).getUsername());
-        assertEquals(Integer.valueOf(2), fetchedUsers.get(1).getUserId());
+        assertEquals(Integer.valueOf(2), fetchedUsers.get(1).getUserID());
         assertEquals("Second User", fetchedUsers.get(1).getUsername());
 
         verify(userDao, times(1)).fetchAll();
@@ -92,7 +92,7 @@ public class UserServiceTests {
     public void testSavedUserAndEnsureTestIsPassed() throws Exception {
         // Arrange
         UserDto newCreatedUser = new UserDto();
-        newCreatedUser.setUserId(3);
+        newCreatedUser.setUserID(3);
         newCreatedUser.setUsername("User 3");
         newCreatedUser.setPassword("Password 3");
 
@@ -104,7 +104,7 @@ public class UserServiceTests {
 
         // Assert
         assertNotNull(newSavedUser);
-        assertEquals(newCreatedUser.getUserId(), newSavedUser.getUserId());
+        assertEquals(newCreatedUser.getUserID(), newSavedUser.getUserID());
         assertEquals(newCreatedUser.getUsername(), newSavedUser.getUsername());
         assertEquals(newCreatedUser.getPassword(), newSavedUser.getPassword());
 

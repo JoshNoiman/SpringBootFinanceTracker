@@ -23,7 +23,7 @@ public class UserDaoStub implements IUserDao{
     @Override
     public UserDto saveUser(UserDto user) throws Exception {
         // TODO Auto-generated method stub
-        allUsers.put(user.getUserId(), user);
+        allUsers.put(user.getUserID(), user);
         return user;
     }
 
@@ -32,7 +32,7 @@ public class UserDaoStub implements IUserDao{
      * @param user user to add
      */
     public void saveUserWithoutException(UserDto user) {
-        allUsers.put(user.getUserId(), user);
+        allUsers.put(user.getUserID(), user);
     }
 
     /**
@@ -83,8 +83,8 @@ public class UserDaoStub implements IUserDao{
      * Checks to see if the user is in database.
      * If true, login
      * If false, return incorrect password / username.
-     * @param UserName The username being used to login
-     * @param UserPassword The Password to be used at login.
+     * @param userName The username being used to login
+     * @param password The Password to be used at login.
      * @return A message confirming/denying access to finance tracker.
      */
     @Override

@@ -9,7 +9,7 @@ import java.math.BigDecimal;
  */
 @Data
 public class UserDto {
-    private Integer userId;
+    private Integer userID;
     private String password;
     private String username;
     private BigDecimal income = BigDecimal.ZERO;
