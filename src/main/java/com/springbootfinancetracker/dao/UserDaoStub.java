@@ -67,7 +67,7 @@ public class UserDaoStub implements IUserDao{
 
         // Check if the user is already registered
         for (UserDto user : users) {
-            if (newUser.getUserID() == user.getUserID()) {
+            if (newUser.getUserId() == user.getUserId()) {
                 return "Error: this user is already registered in the system.";
             }
         }
@@ -83,8 +83,8 @@ public class UserDaoStub implements IUserDao{
      * Checks to see if the user is in database.
      * If true, login
      * If false, return incorrect password / username.
-     * @param UserName The username being used to login
-     * @param UserPassword The Password to be used at login.
+     * @param userName The username being used to login
+     * @param password The Password to be used at login.
      * @return A message confirming/denying access to finance tracker.
      */
     @Override
