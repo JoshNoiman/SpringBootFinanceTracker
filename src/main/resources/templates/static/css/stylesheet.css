@@ -27,6 +27,11 @@
     border: 2px solid black
 }
 
+#category-box {
+    background-color: black;
+    border: 2px solid black
+}
+
 #expenses-box {
     background-color: red;
     border: 2px solid black;
