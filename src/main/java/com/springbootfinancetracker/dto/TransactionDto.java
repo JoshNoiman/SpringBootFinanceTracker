@@ -7,4 +7,6 @@ public class TransactionDto {
     private Integer transactionID;
     private String categroyIsIncomeOrExpense;
     private String transactionName;
+    private Double amount;
+    private String transactionCategory;
 }
