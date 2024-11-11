@@ -14,25 +14,21 @@ public class FinancialGoalServiceStub implements IFinancialGoalService {
 
     @Override
     public FinancialGoalDto createFinancialGoal(FinancialGoalDto financialGoalDto) throws Exception {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'createFinancialGoal'");
+        return financialGoalDao.createFinancialGoal(financialGoalDto);
     }
 
     @Override
     public FinancialGoalDto updateFinancialGoal(FinancialGoalDto financialGoalDto) throws Exception {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'saveFinancialGoal'");
+        return financialGoalDao.updateFinancialGoal(financialGoalDto);
     }
 
     @Override
     public FinancialGoalDto getFinancialGoalById(int id) throws Exception {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'getFinancialGoalById'");
+        return financialGoalDao.getFinancialGoalById(id);
     }
 
     @Override
     public List<FinancialGoalDto> getAllFinancialGoals() throws Exception {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'getAllFinancialGoals'");
+        return financialGoalDao.getAllFinancialGoals();
     } 
 }
