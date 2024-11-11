@@ -78,7 +78,7 @@
         <div class="mt-3">
             <select class="form-select form-select-lg mb-3" aria-label=".form-select-lg example">
                 <option value="" disabled selected>Select a category</option>
-                <option th:each="category : ${categories}" th:value="${category.id}" th:text="${category.name}"></option>
+                <option th:each="category : ${allCategories}" th:value="${category.id}" th:text="${category.name}"></option>
             </select>
         </div>
         <!-- Income Box -->
