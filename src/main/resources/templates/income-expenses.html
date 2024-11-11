@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <title>Income and Expenses</title>
@@ -75,11 +75,11 @@
             <div class="d-flex">
                 <div class="p-2 text-white fw-bold" id="category-box"> CATEGORY </div>
             </div>
-            <form class="mt-2">
-                <label>
-                    <input type="radio" class="#">
-                </label>
-            </form>
+        <div class="mt-3">
+            <select class="form-select form-select-lg mb-3" aria-label=".form-select-lg example">
+                <option value="" disabled selected>Select a category</option>
+                <option th:each="category : ${categories}" th:value="${category.id}" th:text="${category.name}"></option>
+            </select>
         </div>
         <!-- Income Box -->
         <div class="mb-4">
