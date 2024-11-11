@@ -21,7 +21,7 @@ public interface IFinancialGoalDao {
      * @return
      * @throws Exception
      */
-    FinancialGoalDto saveFinancialGoal(FinancialGoalDto financialGoalDto) throws Exception;
+    FinancialGoalDto updateFinancialGoal(FinancialGoalDto financialGoalDto) throws Exception;
 
     /**
      * 

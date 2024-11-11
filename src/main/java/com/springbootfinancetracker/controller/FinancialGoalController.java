@@ -39,8 +39,8 @@ public class FinancialGoalController {
     }
 
     @PutMapping("/financialgoal")
-    public FinancialGoalDto saveFinancialGoal(@RequestBody FinancialGoalDto financialGoalDto) throws Exception {
-        return iFinancialGoalService.saveFinancialGoal(financialGoalDto);
+    public FinancialGoalDto updateFinancialGoal(@RequestBody FinancialGoalDto financialGoalDto) throws Exception {
+        return iFinancialGoalService.updateFinancialGoal(financialGoalDto);
     }
 
 

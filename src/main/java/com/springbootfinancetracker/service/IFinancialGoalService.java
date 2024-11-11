@@ -18,7 +18,7 @@ public interface IFinancialGoalService {
      * @return
      * @throws Exception
      */
-    public FinancialGoalDto saveFinancialGoal(FinancialGoalDto financialGoalDto) throws Exception;
+    public FinancialGoalDto updateFinancialGoal(FinancialGoalDto financialGoalDto) throws Exception;
     /**
      * 
      * @param id

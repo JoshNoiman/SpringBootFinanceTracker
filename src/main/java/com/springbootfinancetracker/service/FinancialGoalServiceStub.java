@@ -19,7 +19,7 @@ public class FinancialGoalServiceStub implements IFinancialGoalService {
     }
 
     @Override
-    public FinancialGoalDto saveFinancialGoal(FinancialGoalDto financialGoalDto) throws Exception {
+    public FinancialGoalDto updateFinancialGoal(FinancialGoalDto financialGoalDto) throws Exception {
         // TODO Auto-generated method stub
         throw new UnsupportedOperationException("Unimplemented method 'saveFinancialGoal'");
     }

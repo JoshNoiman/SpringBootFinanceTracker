@@ -1,36 +1,44 @@
 package com.springbootfinancetracker.dao;
 
+import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import org.springframework.stereotype.Repository;
 
+import com.springbootfinancetracker.dto.BudgetDto;
 import com.springbootfinancetracker.dto.FinancialGoalDto;
 
 @Repository
 public class FinancialGoalDaoStub implements IFinancialGoalDao {
 
+    Map<Integer, FinancialGoalDto> allFinancialGoals = new HashMap<>();
+
     @Override
     public FinancialGoalDto createFinancialGoal(FinancialGoalDto financialGoalDto) throws Exception {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'createFinancialGoal'");
+        allFinancialGoals.put(financialGoalDto.getGoalID(), financialGoalDto);
+        return financialGoalDto;
     }
 
     @Override
-    public FinancialGoalDto saveFinancialGoal(FinancialGoalDto financialGoalDto) throws Exception {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'saveFinancialGoal'");
+    public FinancialGoalDto updateFinancialGoal(FinancialGoalDto financialGoalDto) throws Exception {
+        int financialGoalID = financialGoalDto.getGoalID();
+        allFinancialGoals.put(financialGoalID, financialGoalDto);
+        return financialGoalDto;
     }
 
     @Override
     public FinancialGoalDto getFinancialGoalById(int id) throws Exception {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'getFinancialGoalById'");
+        FinancialGoalDto fetchedFinancialGoal = new FinancialGoalDto();
+        fetchedFinancialGoal.setGoalID(id);
+        return fetchedFinancialGoal;
     }
 
     @Override
     public List<FinancialGoalDto> getAllFinancialGoals() throws Exception {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'getAllFinancialGoals'");
+        List<FinancialGoalDto> financialGoalsList = new ArrayList<>(allFinancialGoals.values());
+        return financialGoalsList;
     }
 
 }
