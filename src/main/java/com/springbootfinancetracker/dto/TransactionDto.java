@@ -5,6 +5,7 @@ import lombok.Data;
 @Data
 public class TransactionDto {
     private Integer transactionID;
-    private String categroyIsIncomeOrExpense;
+    private String categoryIsIncomeOrExpense;
     private String transactionName;
+    private Integer transactionValue;
 }
