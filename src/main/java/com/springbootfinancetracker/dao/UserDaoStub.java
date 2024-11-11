@@ -67,7 +67,7 @@ public class UserDaoStub implements IUserDao{
 
         // Check if the user is already registered
         for (UserDto user : users) {
-            if (newUser.getUserID() == user.getUserID()) {
+            if (newUser.getUserId() == user.getUserId()) {
                 return "Error: this user is already registered in the system.";
             }
         }
