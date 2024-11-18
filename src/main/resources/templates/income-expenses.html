@@ -81,6 +81,10 @@
                 <option value="" disabled selected>Select a category</option>
                 <option th:each="category : ${allCategories}" th:value="${category.id}" th:text="${category.name}"></option>
             </select>
+            <!-- Submit Button -->
+            <div class="mt-4 text-center">
+                <button type="submit" class="btn btn-primary">Submit Category</button>
+            </div>
         </div>
         <!-- Income Box -->
         <div class="mb-4">
