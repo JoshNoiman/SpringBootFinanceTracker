@@ -1,6 +1,4 @@
 package com.springbootfinancetracker.dao;
-
-import org.apache.catalina.User;
 import org.springframework.stereotype.Repository;
 
 import com.springbootfinancetracker.dto.UserDto;
