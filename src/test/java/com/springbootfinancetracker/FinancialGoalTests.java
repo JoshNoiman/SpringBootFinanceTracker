@@ -114,35 +114,37 @@ public class FinancialGoalTests {
         verify(financialGoalDao, times(1)).getFinancialGoalById(financialGoalID);
     }
 
-    // @Test
-    // public void testGetAllBudgets() throws Exception {
-    //     // Arrange
-    //     BudgetDto budget1 = new BudgetDto();
-    //     budget1.setBudgetID(1);
-    //     budget1.setCategory("Toys");
-    //     budget1.setAmount(50);
+    @Test
+    public void testGetAllFinancialGoals() throws Exception {
+        // Arrange
+        FinancialGoalDto financialGoal1 = new FinancialGoalDto();
+        financialGoal1.setGoalID(1);
+        financialGoal1.setTargetamount(200);
+        financialGoal1.setGoalName("concert tickets");
+        financialGoal1.setTargetDate(new Date(2024, 11, 11));
 
-    //     BudgetDto budget2 = new BudgetDto();
-    //     budget2.setBudgetID(2);
-    //     budget2.setCategory("Makeup");
-    //     budget2.setAmount(100);
+        FinancialGoalDto financialGoal2 = new FinancialGoalDto();
+        financialGoal2.setGoalID(2);
+        financialGoal2.setTargetamount(100);
+        financialGoal2.setGoalName("ordering pizza");
+        financialGoal2.setTargetDate(new Date(2024, 12, 20));
 
-    //     List<BudgetDto> budgets = Arrays.asList(budget1, budget2);
-    //     when(budgetDao.getAllBudgets()).thenReturn(budgets);
+        List<FinancialGoalDto> financialGoals = Arrays.asList(financialGoal1, financialGoal2);
+        when(financialGoalDao.getAllFinancialGoals()).thenReturn(financialGoals);
 
-    //     // Act
-    //     List<BudgetDto> retrievedBudgets = budgetService.getBudgets();
+        // Act
+        List<FinancialGoalDto> retrievedGoals = FinancialGoalServiceStub.getAllFinancialGoals();
 
-    //     // Assert
-    //     assertNotNull(retrievedBudgets);
-    //     assertEquals(2, retrievedBudgets.size());
+        // Assert
+        assertNotNull(retrievedGoals);
+        assertEquals(2, retrievedGoals.size());
 
-    //     assertEquals("Toys", retrievedBudgets.get(0).getCategory());
-    //     assertEquals(Integer.valueOf(50), retrievedBudgets.get(0).getAmount());
+        assertEquals("concert tickets", retrievedGoals.get(0).getGoalName());
+        assertEquals(Integer.valueOf(200), retrievedGoals.get(0).getTargetamount());
 
-    //     assertEquals("Makeup", retrievedBudgets.get(1).getCategory());
-    //     assertEquals(Integer.valueOf(100), retrievedBudgets.get(1).getAmount());
+        assertEquals("ordering pizza", retrievedGoals.get(1).getGoalName());
+        assertEquals(Integer.valueOf(100), retrievedGoals.get(1).getTargetamount());
 
-    //     verify(budgetDao, times(1)).getAllBudgets();
-    // }
+        verify(financialGoalDao, times(1)).getAllFinancialGoals();
+    }
 }

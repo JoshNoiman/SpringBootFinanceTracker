@@ -28,7 +28,7 @@ public class FinancialGoalServiceStub implements IFinancialGoalService {
     }
 
     @Override
-    public List<FinancialGoalDto> getAllFinancialGoals() throws Exception {
+    public static List<FinancialGoalDto> getAllFinancialGoals() throws Exception {
         return financialGoalDao.getAllFinancialGoals();
     } 
 }
