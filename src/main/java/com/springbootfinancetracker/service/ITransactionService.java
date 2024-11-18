@@ -60,7 +60,7 @@ public interface ITransactionService {
      *
      * @return all categories
      */
-    List<String> allCategories = new ArrayList<>();
+    List<String> getAllCategories = new ArrayList<>();
 
     /**
      * Grabs totals for each of the categories.
