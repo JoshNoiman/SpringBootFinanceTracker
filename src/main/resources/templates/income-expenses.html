@@ -86,17 +86,27 @@
             <div class="d-flex">
                 <div class="p-2 text-white fw-bold" id="income-box"> INCOME </div>
             </div>
-            <form class="mt-2">
-                <input type="number" class="form-control" placeholder="Enter income amount">
+            <form class="mt-2" method="post" th:action="@{/income-expenses}">
+                <!-- Income Amount -->
+                <input type="number" class="form-control" name="incomeAmount" placeholder="Enter income amount" min="0.01" step="0.01" required>
+                <!-- Submit Button -->
+                <div class="mt-4 text-center">
+                    <button type="submit" class="btn btn-primary">Submit Income</button>
+                </div>
             </form>
         </div>
         <!-- Expenses Box -->
-        <div class="mb-4">
+        <div class="mb-4 mt-5">
             <div class="d-flex">
                 <div class="p-2 text-white fw-bold" id="expenses-box"> EXPENSES </div>
             </div>
-            <form class="mt-2">
-                <input type="number" class="form-control" placeholder="Enter expense amount">
+            <form class="mt-2" method="post" th:action="@{/income-expenses}">
+                <!-- Expense Amount -->
+                <input type="number" class="form-control" name="expenseAmount" placeholder="Enter expense amount" min="0.01" step="0.01" required>
+                <!-- Submit Button -->
+                <div class="mt-4 text-center">
+                    <button type="submit" class="btn btn-primary">Submit Expense</button>
+                </div>
             </form>
         </div>
         <!-- Summary Section -->
@@ -105,13 +115,13 @@
             <form class="mt-2 d-flex justify-content-center">
                 <div class="input-group">
                     <span class="input-group-text" id="dollar-span">$</span>
-                    <input type="text" class="form-control" id="summary-total" placeholder="Total">
+                    <input type="text" class="form-control" id="summary-total" placeholder="Total" th:value="${summaryTotal}" readonly>
                 </div>
             </form>
         </div>
     </div>
 </div>
-
+</div>
 
 
 
