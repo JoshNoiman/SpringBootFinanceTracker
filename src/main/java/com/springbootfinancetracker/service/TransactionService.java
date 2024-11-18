@@ -2,6 +2,7 @@ package com.springbootfinancetracker.service;
 
 import com.springbootfinancetracker.dto.TransactionDto;
 
+import java.util.HashMap;
 import java.util.Map;
 
 public class TransactionService implements ITransactionService {
@@ -78,6 +79,11 @@ public class TransactionService implements ITransactionService {
      */
     @Override
     public Map<String, Double> getTotalsByCategory() {
-        return Map.of();
+        Map<String, Double> totals = new HashMap<>();
+        for(String category : getAllCategories) {
+            double total = getTotalByCategory(category);
+            totals.put(category, total);
+        }
+        return totals;
     }
 }
