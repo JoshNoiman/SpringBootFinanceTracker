@@ -1,11 +1,15 @@
 package com.springbootfinancetracker.service;
 
 import com.springbootfinancetracker.dto.TransactionDto;
+import org.springframework.beans.factory.annotation.Autowired;
 
 import java.util.HashMap;
 import java.util.Map;
 
 public class TransactionService implements ITransactionService {
+
+    //@Autowired
+    //private TransactionDao transactionDao
 
     /**
      * Creates a unique transaction ID associated with a transaction.
