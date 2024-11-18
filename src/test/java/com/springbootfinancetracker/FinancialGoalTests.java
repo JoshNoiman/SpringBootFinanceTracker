@@ -133,7 +133,7 @@ public class FinancialGoalTests {
         when(financialGoalDao.getAllFinancialGoals()).thenReturn(financialGoals);
 
         // Act
-        List<FinancialGoalDto> retrievedGoals = FinancialGoalServiceStub.getAllFinancialGoals();
+        List<FinancialGoalDto> retrievedGoals = financialGoalDao.getAllFinancialGoals();
 
         // Assert
         assertNotNull(retrievedGoals);
