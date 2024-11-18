@@ -20,6 +20,7 @@
 
 #summary-box {
     background-color: #0071c1;
+    border: 2px solid black;
 }
 
 #income-box {
