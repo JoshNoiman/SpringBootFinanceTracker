@@ -40,7 +40,7 @@ public class FinancialGoalTests {
     private IFinancialGoalDao financialGoalDao;
 
     @Test
-    public void testCreatingFinancialGoalForUser() throws Exception {
+    public void testCreatingFinancialGoal() throws Exception {
         // Arrange
         FinancialGoalDto financialGoal = new FinancialGoalDto();
         financialGoal.setGoalID(1);
@@ -63,51 +63,56 @@ public class FinancialGoalTests {
         verify(financialGoalDao, times(1)).createFinancialGoal(createdFinancialGoal);
     }
 
-    // @Test
-    // public void testUpdatingTheBudgetForUser() throws Exception {
-    //     // Arrange
-    //     BudgetDto budget = new BudgetDto();
-    //     budget.setBudgetID(1);
-    //     budget.setCategory("Shopping");
-    //     budget.setAmount(600);
+    @Test
+    public void testUpdatingTheFinancialGoal() throws Exception {
+        // Arrange
+        FinancialGoalDto financialGoal = new FinancialGoalDto();
+        financialGoal.setGoalID(null);
+        financialGoal.setTargetamount(300);
+        financialGoal.setGoalName("sporting event");
+        financialGoal.setTargetDate(new Date(2024, 12, 15));
 
-    //     when(budgetDao.updateBudget(budget)).thenReturn(budget);
+        when(financialGoalDao.updateFinancialGoal(financialGoal)).thenReturn(financialGoal);
 
-    //     // Act
-    //     BudgetDto updatedBudget = budgetService.updateBudget(budget);
+        // Act
+        FinancialGoalDto updatedFinancialGoal = financialGoalDao.updateFinancialGoal(financialGoal);
 
-    //     // Assert
-    //     assertNotNull(updatedBudget);
-    //     assertEquals(Integer.valueOf(1), updatedBudget.getBudgetID());
-    //     assertEquals("Shopping", updatedBudget.getCategory());
-    //     assertEquals(Integer.valueOf(600), updatedBudget.getAmount());
+        // Assert
+        assertNotNull(updatedFinancialGoal);
+        assertEquals(Integer.valueOf(1), updatedFinancialGoal.getGoalID());
+        assertEquals("sporting event", updatedFinancialGoal.getTargetamount());
+        assertEquals(Integer.valueOf(300), updatedFinancialGoal.getGoalName());
+        assertEquals(new Date(2024, 12, 15), updatedFinancialGoal.getTargetDate());
 
-    //     verify(budgetDao, times(1)).updateBudget(budget);
+        verify(financialGoalDao, times(1)).updateFinancialGoal(financialGoal);
 
-    // }
+    }
 
-    // @Test
-    // public void testGetBudgetById() throws Exception {
-    //     // Arrange
-    //     int budgetId = 1;
-    //     BudgetDto budget = new BudgetDto();
-    //     budget.setBudgetID(budgetId);
-    //     budget.setCategory("Gas");
-    //     budget.setAmount(100);
+    @Test
+    public void testFinancialGoalById() throws Exception {
+        // Arrange
+        int financialGoalID = 1;
+        FinancialGoalDto financialGoal = new FinancialGoalDto();
+        financialGoal.setGoalID(financialGoalID);
+        financialGoal.setTargetamount(200);
+        financialGoal.setGoalName("concert tickets");
+        financialGoal.setTargetDate(new Date(2024, 11, 11));
 
-    //     when(budgetDao.getBudgetById(budgetId)).thenReturn(budget);
+        when(financialGoalDao.getFinancialGoalById(financialGoalID)).thenReturn(financialGoal);
 
-    //     // Act
-    //     BudgetDto retrievedBudget = budgetService.getBudgetById(budgetId);
+        // Act
+        FinancialGoalDto retrievedFinancialGoal = financialGoalService.getFinancialGoalById(financialGoalID);
 
-    //     // Assert
-    //     assertNotNull(retrievedBudget);
-    //     assertEquals(Integer.valueOf(budgetId), retrievedBudget.getBudgetID());
-    //     assertEquals("Gas", retrievedBudget.getCategory());
-    //     assertEquals(Integer.valueOf(100), retrievedBudget.getAmount());
+        // Assert
+        assertNotNull(retrievedFinancialGoal);
+        assertEquals(Integer.valueOf(financialGoalID), retrievedFinancialGoal.getGoalID());
+        assertEquals("concert tickets", retrievedFinancialGoal.getGoalName());
+        assertEquals(Integer.valueOf(100), retrievedFinancialGoal.getTargetamount());
+        assertEquals(new Date(2024, 11, 11), retrievedFinancialGoal.getTargetDate());
 
-    //     verify(budgetDao, times(1)).getBudgetById(budgetId);
-    // }
+
+        verify(financialGoalDao, times(1)).getFinancialGoalById(financialGoalID);
+    }
 
     // @Test
     // public void testGetAllBudgets() throws Exception {
