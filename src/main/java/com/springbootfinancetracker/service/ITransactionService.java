@@ -9,6 +9,12 @@ import java.util.Map;
 public interface ITransactionService {
 
     /**
+     * Creates a unique transaction ID associated with a transaction.
+     * @return generated transaction ID
+     */
+    int createTransactionId();
+
+    /**
      * Adds income to transaction with specified category & amount.
      *
      * @param amount The amount of income
