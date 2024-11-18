@@ -1,5 +1,6 @@
 package com.springbootfinancetracker.controller;
 
+import java.beans.JavaBean;
 import java.util.Arrays;
 import java.util.List;
 
@@ -21,8 +22,6 @@ public class FinancialGoalController {
     @Autowired
     IFinancialGoalService iFinancialGoalService;
 
-
-
     @GetMapping("/financialgoal")
     public List<FinancialGoalDto> getAllFinancialGoals() throws Exception {
         return iFinancialGoalService.getAllFinancialGoals();
@@ -42,9 +41,4 @@ public class FinancialGoalController {
     public FinancialGoalDto updateFinancialGoal(@RequestBody FinancialGoalDto financialGoalDto) throws Exception {
         return iFinancialGoalService.updateFinancialGoal(financialGoalDto);
     }
-
-
-
-
-
 }
