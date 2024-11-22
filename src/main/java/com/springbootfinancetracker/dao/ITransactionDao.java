@@ -9,7 +9,7 @@ public interface ITransactionDao {
      * @param integer to update transaction balance
      * @return none
      */
-    void updateTransactionAmt(TransactionDto trans, int amt);
+    void updateTransactionAmt(TransactionDto trans, Double amt);
 
     /**
      * updates the category value.

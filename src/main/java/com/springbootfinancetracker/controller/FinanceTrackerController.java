@@ -1,6 +1,5 @@
 package com.springbootfinancetracker.controller;
 
-<<<<<<< HEAD
 import com.springbootfinancetracker.dto.CategoryDto;
 import com.springbootfinancetracker.dto.TransactionDto;
 import com.springbootfinancetracker.service.TransactionService;
@@ -14,10 +13,10 @@ import org.thymeleaf.context.Context;
 
 import java.util.List;
 import java.util.Map;
-=======
+
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
->>>>>>> 09e324caf95c428b9b8e4775d62e9172ec1c249c
+
 
 
 @Controller
@@ -33,16 +32,15 @@ public class FinanceTrackerController {
      * Handle the root (/) endpoint and return a start page.
      * @return
      */
-<<<<<<< HEAD
     @GetMapping("/")
-=======
+
     @RequestMapping("/start.html")
->>>>>>> 09e324caf95c428b9b8e4775d62e9172ec1c249c
+
     public String index() {
         return "start";
     }
 
-<<<<<<< HEAD
+
     /**
      * Handle /income-expense endpoint and return page with necessary data.
      *
@@ -115,7 +113,7 @@ public class FinanceTrackerController {
         return ResponseEntity.ok(editedTransaction);
     }
 
-=======
+
     @RequestMapping("/budget.html")
     public String budget() {
         return "budget";
@@ -150,5 +148,4 @@ public class FinanceTrackerController {
     public String User() {
         return "User";
     }
->>>>>>> 09e324caf95c428b9b8e4775d62e9172ec1c249c
 }

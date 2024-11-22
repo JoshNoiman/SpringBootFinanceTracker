@@ -6,8 +6,8 @@ import com.springbootfinancetracker.dao.ITransactionDao;
 public class ITransactionDaoStub implements ITransactionDao {
 
     @Override
-    public void updateTransactionAmt(TransactionDto trans, int amt) {
-        trans.setTransactionValue(amt);
+    public void updateTransactionAmt(TransactionDto trans, Double amt) {
+        trans.setAmount(amt);
     }
 
     @Override

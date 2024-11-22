@@ -1,7 +1,9 @@
 package com.springbootfinancetracker.service;
 
-import com.springbootfinancetracker.dto.CategoryDto;
+
 import com.springbootfinancetracker.dto.TransactionDto;
+import com.springbootfinancetracker.dao.ITransactionDao;
+import com.springbootfinancetracker.dto.CategoryDto;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -97,7 +99,7 @@ public class TransactionService implements ITransactionService {
     public TransactionDto addIncomeTransaction(int transactionId, double amount) {
         TransactionDto transaction = getTransaction(transactionId);
         transaction.setAmount(transaction.getAmount() + amount);
-        transaction.setCategroyIsIncomeOrExpense("INCOME");
+        transaction.setCategoryIsIncomeOrExpense("INCOME");
         return transaction;
     }
 
@@ -112,7 +114,7 @@ public class TransactionService implements ITransactionService {
     public TransactionDto addExpenseTransaction(int transactionId, double amount) {
         TransactionDto transaction = getTransaction(transactionId);
         transaction.setAmount(transaction.getAmount() - amount);
-        transaction.setCategroyIsIncomeOrExpense("EXPENSE");
+        transaction.setCategoryIsIncomeOrExpense("EXPENSE");
         return transaction;
     }
 
@@ -127,7 +129,7 @@ public class TransactionService implements ITransactionService {
         TransactionDto transaction = getTransaction(transactionId);
 
         // Check if INCOME transaction
-        if("INCOME".equalsIgnoreCase(transaction.getCategroyIsIncomeOrExpense())) {
+        if("INCOME".equalsIgnoreCase(transaction.getCategoryIsIncomeOrExpense())) {
             return transaction.getAmount();
         }
 
@@ -146,7 +148,7 @@ public class TransactionService implements ITransactionService {
         TransactionDto transaction = getTransaction(transactionId);
 
         // Check if EXPENSE transaction
-        if("EXPENSE".equalsIgnoreCase(transaction.getCategroyIsIncomeOrExpense())) {
+        if("EXPENSE".equalsIgnoreCase(transaction.getCategoryIsIncomeOrExpense())) {
             return transaction.getAmount();
         }
 
