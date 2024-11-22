@@ -49,7 +49,7 @@ public class FinanceTrackerController {
      * @param model
      * @return income-expense page
      */
-    @GetMapping("/income-expenses")
+    @RequestMapping("/income-expenses")
     public String getIncomeExpenses(Model model) {
         model.addAttribute("allCategories", transactionService.getAllCategories());
         model.addAttribute("transactions", transactionService.getTotalsByCategory());
