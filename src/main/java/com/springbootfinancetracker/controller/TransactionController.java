@@ -21,18 +21,8 @@ import com.springbootfinancetracker.dto.TransactionDto;
 @RequestMapping("/api/transactions")
 public class TransactionController {
 
-//    private final TransactionService transactionService;
-//
-//    public TransactionController(TransactionService transactionService) {
-//        this.transactionService = transactionService;
-//    }
 
-//    @PostMapping
-//    public ResponseEntity<String> createTransaction(@RequestBody TransactionDto transaction) {
-//        // Save the transaction
-//        transactionService.addIncomeTransaction(transaction);
-//        transaction.
-//    }
+
 
     @GetMapping("/transaction")
     public List<TransactionDto> getAllTransactions() {
