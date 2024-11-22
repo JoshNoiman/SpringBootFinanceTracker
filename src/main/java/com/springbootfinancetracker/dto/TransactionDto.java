@@ -9,7 +9,10 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 public class TransactionDto {
     private Integer transactionID;
-    private String categoryIsIncomeOrExpense;
+    private String categroyIsIncomeOrExpense;
     private String transactionName;
-    private Integer transactionValue;
+    private Double incomeAmount;
+    private Double expenseAmount;
+    private Double amount;
+    private String transactionCategory;
 }
