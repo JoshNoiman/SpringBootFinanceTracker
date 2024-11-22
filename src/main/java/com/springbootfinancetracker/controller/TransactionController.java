@@ -6,6 +6,7 @@ import java.util.List;
 
 import com.springbootfinancetracker.service.TransactionService;
 import org.springframework.http.ResponseEntity;
+import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
@@ -18,7 +19,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.springbootfinancetracker.dto.TransactionDto;
 
-@RestController
+@Controller
 public class TransactionController {
 
     @Autowired
