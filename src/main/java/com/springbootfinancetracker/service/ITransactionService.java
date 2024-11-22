@@ -97,7 +97,7 @@ public interface ITransactionService {
     void updateTransaction(int id, Double income, Double expense);
 
     /**
-     * Saves provided transaction into database
+     * Saves provided transaction into the database
      *
      * @param transaction the transaction to be saved
      */
