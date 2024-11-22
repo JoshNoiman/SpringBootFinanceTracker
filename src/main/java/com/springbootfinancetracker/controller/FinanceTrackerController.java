@@ -94,7 +94,7 @@ public class FinanceTrackerController {
     }
 
     /**
-     *
+     * When editing transaction will get the ID and change the associated variables with transaction
      *
      * @param id
      * @return
