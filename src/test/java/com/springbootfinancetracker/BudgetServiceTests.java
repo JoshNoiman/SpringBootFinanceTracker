@@ -3,7 +3,6 @@ package com.springbootfinancetracker;
 import com.springbootfinancetracker.dao.IBudgetDao;
 import com.springbootfinancetracker.dto.BudgetDto;
 import com.springbootfinancetracker.service.BudgetServiceStub;
-import jakarta.annotation.ManagedBean;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.mockito.InjectMocks;
@@ -21,7 +20,6 @@ import static org.mockito.Mockito.*;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest
-@ManagedBean
 @Scope("session")
 public class BudgetServiceTests {
 

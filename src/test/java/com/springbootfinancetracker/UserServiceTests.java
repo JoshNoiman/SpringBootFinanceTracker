@@ -1,10 +1,8 @@
 package com.springbootfinancetracker;
 
 import com.springbootfinancetracker.dao.IUserDao;
-import com.springbootfinancetracker.dao.UserDaoStub;
 import com.springbootfinancetracker.dto.UserDto;
 import com.springbootfinancetracker.service.UserServiceStub;
-import jakarta.annotation.ManagedBean;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.mockito.InjectMocks;
@@ -22,7 +20,6 @@ import static org.mockito.Mockito.*;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest
-@ManagedBean
 @Scope("session")
 public class UserServiceTests {
 
