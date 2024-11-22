@@ -11,8 +11,43 @@ public class FinanceTrackerController {
      * Handle the root (/) endpoint and return a start page.
      * @return
      */
-    @RequestMapping("/")
+    @RequestMapping("/start.html")
     public String index() {
         return "start";
+    }
+
+    @RequestMapping("/budget.html")
+    public String budget() {
+        return "budget";
+    }
+
+    @RequestMapping("/error.html")
+    public String error() {
+        return "error";
+    }
+
+    @RequestMapping("/edit-profile.html")
+    public String editProfile() {
+        return "edit-profile";
+    }
+
+    @RequestMapping("/goal-tracker.html")
+    public String goalTracker() {
+        return "goal-tracker";
+    }
+
+    @RequestMapping("/income-expenses.html")
+    public String incomeExpenses() {
+        return "income-expenses";
+    }
+
+    @RequestMapping("/Login.html")
+    public String login() {
+        return "login";
+    }
+
+    @RequestMapping("/User.html")
+    public String User() {
+        return "User";
     }
 }
