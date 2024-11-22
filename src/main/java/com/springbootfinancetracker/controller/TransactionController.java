@@ -19,7 +19,6 @@ import org.springframework.web.bind.annotation.RestController;
 import com.springbootfinancetracker.dto.TransactionDto;
 
 @RestController
-@RequestMapping("/api/transactions")
 public class TransactionController {
 
     @Autowired
