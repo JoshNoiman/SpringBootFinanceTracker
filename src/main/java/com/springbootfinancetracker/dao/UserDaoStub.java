@@ -81,8 +81,8 @@ public class UserDaoStub implements IUserDao{
      * Checks to see if the user is in database.
      * If true, login
      * If false, return incorrect password / username.
-     * @param UserName The username being used to login
-     * @param UserPassword The Password to be used at login.
+     * @param userName The username being used to login
+     * @param password The Password to be used at login.
      * @return A message confirming/denying access to finance tracker.
      */
     @Override

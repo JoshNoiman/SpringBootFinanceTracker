@@ -19,11 +19,18 @@
 }
 
 #summary-box {
-    background-color: #0071c1;
+    background-color: gray;
+    border: 2px solid black;
+    text-align: center;
 }
 
 #income-box {
     background-color: #4ea72f;
+    border: 2px solid black
+}
+
+#category-box {
+    background-color: black;
     border: 2px solid black
 }
 

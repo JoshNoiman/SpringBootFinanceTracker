@@ -1,0 +1,12 @@
+<!-- Dynamic data from transaction -->
+<tbody id="transaction-table-body" th:fragment="transactionRows">
+<tr th:each="transaction : ${transactions}">
+  <td th:text="${transaction.transactionID}"></td>
+  <td th:text="${transaction.transactionCategory}"></td>
+  <td th:text="${transaction.incomeAmount}"></td>
+  <td th:text="${transaction.expenseAmount}"></td>
+  <td>
+    <button class="btn btn-warning edit-transaction-btn" th:data-id="${transaction.transactionID}">Edit</button>
+  </td>
+</tr>
+</tbody>
