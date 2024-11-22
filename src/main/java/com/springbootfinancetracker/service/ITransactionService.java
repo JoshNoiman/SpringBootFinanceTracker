@@ -15,36 +15,54 @@ public interface ITransactionService {
     int createTransactionId();
 
     /**
+     * Save the transaction into the DB
+     *
+     * @param category the new transaction's associated category
+     * @return newly made transaction
+     */
+    TransactionDto createTransaction(String category);
+
+    /**
+     * Grab transaction by its associated ID
+     *
+     * @param id the desired transaction's ID to be grabbed
+     * @return the transaction associated with the ID
+     */
+    TransactionDto getTransaction(int id);
+
+    /**
      * Adds income to transaction with specified category & amount.
      *
+     * @param transactionId the transaction to be changed
      * @param amount The amount of income
-     * @param category Category associated with amount
      * @return new income
      */
-    TransactionDto addIncomeTransaction(double amount, String category);
+    TransactionDto addIncomeTransaction(int transactionId, double amount);
 
     /**
      * Adds expense to transaction with specified category & amount.
      *
+     * @param transactionId the transaction to be change
      * @param amount The amount of expense to subtract
-     * @param category Category expense will be applied to
      * @return new expense
      */
-    TransactionDto addExpenseTransaction(double amount, String category);
+    TransactionDto addExpenseTransaction(int transactionId, double amount);
 
     /**
      * Grabs total income associated with transaction.
      *
-     * @return transaction's total income
+     * @param transactionId the transaction to grab
+     * @return the transaction's total income
      */
-    double getTotalIncome();
+    double getTotalIncome(int transactionId);
 
     /**
      * Grabs total expense for transaction
      *
-     * @return transactions total expense
+     * @param transactionId the transaction to grab
+     * @return transaction's total expense
      */
-    double getTotalExpense();
+    double getTotalExpense(int transactionId);
 
     /**
      * Get total amount after income & expense calculation for transaction in a specific category
@@ -68,4 +86,20 @@ public interface ITransactionService {
      * @return a map of category names with their associated total amounts
      */
     Map<String, Double> getTotalsByCategory();
+
+    /**
+     * Updates retrieved transaction and edits income or expense by specified amount
+     *
+     * @param id of transaction to be edited
+     * @param income of transaction to be added to or removed (holds double value)
+     * @param expense of transaction to be added or removed (holds double value)
+     */
+    void updateTransaction(int id, Double income, Double expense);
+
+    /**
+     * Saves provided transaction into database
+     *
+     * @param transaction the transaction to be saved
+     */
+    void saveTransaction(TransactionDto transaction);
 }

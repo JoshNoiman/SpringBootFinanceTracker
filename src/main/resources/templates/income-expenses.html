@@ -8,7 +8,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
 
     <!-- Custom CSS -->
-    <link rel="stylesheet" href="/templates/static/css/stylesheet.css">
+    <link rel="stylesheet" href="/css/stylesheet.css">
 </head>
 <body>
 
@@ -31,7 +31,7 @@
             </div>
             <!-- Income/Expenses -->
             <div class="col-md-3">
-                <a href="income-expenses.html" class="text-decoration-none">
+                <a th:href="@{/income-expenses}" class="text-decoration-none">
                     <div class="card text-center navigation-box">
                         <div class="card-body">
                             <h5 class="card-title text-white"> Income/Expenses </h5>
@@ -41,7 +41,7 @@
             </div>
             <!-- Budget -->
             <div class="col-md-3">
-                <a href="budget.html" class="text-decoration-none">
+                <a th:href="@{/budget}" class="text-decoration-none">
                     <div class="card text-center navigation-box">
                         <div class="card-body">
                             <h5 class="card-title text-white"> Budget </h5>
@@ -51,7 +51,7 @@
             </div>
             <!-- Goal Tracker -->
             <div class="col-md-3">
-                <a href="goal-tracker.html" class="text-decoration-none">
+                <a th:href="@{/goal-tracker}" class="text-decoration-none">
                     <div class="card text-center navigation-box">
                         <div class="card-body">
                             <h5 class="card-title text-white"> Goal Tracker </h5>
@@ -70,64 +70,68 @@
 <div class="container mt-6 income-expenses-container">
     <!-- Centered Square -->
     <div class="mx-auto" id="main-square">
-        <!-- Category Box -->
-        <div class="mb-4">
-            <div class="d-flex">
-                <div class="p-2 text-white fw-bold" id="category-box"> CATEGORY </div>
+
+        <!-- Form for setting transaction -->
+        <form method="post" th:action="@{/submit-transaction}">
+            <!-- Category Selection -->
+            <div class="mb-4">
+                <label for="category" class="p-2 form-label text-white" id="category-box">Select Category:</label>
+                <select id="category" name="category" class="form-select" required>
+                    <option value="" disabled selected>Select a category</option>
+                    <option th:each="category : ${allCategories}" th:value="${category}" th:text="${category}"></option>
+                </select>
             </div>
-        </div>
-        <div class="mt-3">
-            <select class="form-select form-select-lg mb-3" name="category" aria-label=".form-select-lg example" required>
-                <option value="" disabled selected>Select a category</option>
-                <option th:each="category : ${allCategories}" th:value="${category.id}" th:text="${category.name}"></option>
-            </select>
+
+            <!-- Income Input -->
+            <div class="mb-4">
+                <label for="incomeAmount" class="p-2 form-label text-white" id="income-box">Income Amount:</label>
+                <input type="number" id="incomeAmount" name="incomeAmount" class="form-control" placeholder="Enter income amount" min="0.01" step="0.01">
+            </div>
+
+            <!-- Expense Input -->
+            <div class="mb-4">
+                <label for="expenseAmount" class="p-2 form-label text-white" id="expenses-box">Expense Amount:</label>
+                <input type="number" id="expenseAmount" name="expenseAmount" class="form-control" placeholder="Enter expense amount" min="0.01" step="0.01">
+            </div>
+
             <!-- Submit Button -->
-            <div class="mt-4 text-center">
-                <button type="submit" class="btn btn-primary">Submit Category</button>
+            <div class="text-center">
+                <button type="submit" class="btn btn-success">Submit Transaction</button>
             </div>
-        </div>
-        <!-- Income Box -->
-        <div class="mb-4">
-            <div class="d-flex">
-                <div class="p-2 text-white fw-bold" id="income-box"> INCOME </div>
-            </div>
-            <form class="mt-2" method="post" th:action="@{/income-expenses}">
-                <!-- Income Amount -->
-                <input type="number" class="form-control" name="incomeAmount" placeholder="Enter income amount" min="0.01" step="0.01" required>
-                <!-- Submit Button -->
-                <div class="mt-4 text-center">
-                    <button type="submit" class="btn btn-primary">Submit Income</button>
-                </div>
-            </form>
-        </div>
-        <!-- Expenses Box -->
-        <div class="mb-4 mt-5">
-            <div class="d-flex">
-                <div class="p-2 text-white fw-bold" id="expenses-box"> EXPENSES </div>
-            </div>
-            <form class="mt-2" method="post" th:action="@{/income-expenses}">
-                <!-- Expense Amount -->
-                <input type="number" class="form-control" name="expenseAmount" placeholder="Enter expense amount" min="0.01" step="0.01" required>
-                <!-- Submit Button -->
-                <div class="mt-4 text-center">
-                    <button type="submit" class="btn btn-primary">Submit Expense</button>
-                </div>
-            </form>
-        </div>
-        <!-- Summary Section -->
-        <div class="text-center">
-            <div class="p-2 text-white fw-bold d-inline-block" id="summary-box"> SUMMARY </div>
-            <form class="mt-2 d-flex justify-content-center">
-                <div class="input-group">
-                    <span class="input-group-text" id="dollar-span">$</span>
-                    <input type="text" class="form-control" id="summary-total" placeholder="Total" th:value="${summaryTotal}" readonly>
-                </div>
-            </form>
+        </form>
+
+        <!-- Transactions Table -->
+        <div class="mt-5">
+            <h3 class="p-2" id="summary-box">Transactions</h3>
+            <table class="table table-striped">
+                <thead>
+                <tr>
+                    <th>Transaction ID</th>
+                    <th>Category</th>
+                    <th>Income</th>
+                    <th>Expense</th>
+                    <th>Total</th>
+                    <th>Actions</th>
+                </tr>
+                </thead>
+                <tbody id="transaction-table-body">
+                <tr th:each="transaction : ${transactions}">
+                    <td th:text="${transaction.transactionID}"></td>
+                    <td th:text="${transaction.transactionCategory}"></td>
+                    <td th:text="${transaction.incomeAmount}"></td>
+                    <td th:text="${transaction.expenseAmount}"></td>
+                    <td th:text="${transaction.amount}"></td>
+                    <td>
+                        <button class="btn btn-warning edit-transaction-btn" th:data-id="${transaction.transactionID}">Edit</button>
+                    </td>
+                </tr>
+                </tbody>
+            </table>
         </div>
     </div>
 </div>
 
-<!-- Bootstrap JS (for alert dismiss functionality) -->
+<!-- Bootstrap JS -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
 
 </body>

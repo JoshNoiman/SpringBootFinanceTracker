@@ -19,8 +19,9 @@
 }
 
 #summary-box {
-    background-color: #0071c1;
+    background-color: gray;
     border: 2px solid black;
+    text-align: center;
 }
 
 #income-box {
