@@ -58,7 +58,12 @@ public class FinanceTrackerController {
     }
 
     @RequestMapping("/income-expenses.html")
-    public String incomeExpenses() {
+    public String incomeExpenses(Model model) {
+        model.addAttribute("allCategories", transactionService.getAllCategories());
+        model.addAttribute("transactions", transactionService.getTotalsByCategory());
+
+        // TODO: replace 1 with transaction ID of most recent transaction
+        model.addAttribute("transactionId", 1);
         return "income-expenses";
     }
 
