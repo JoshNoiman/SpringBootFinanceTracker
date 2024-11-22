@@ -57,13 +57,6 @@ public class TransactionService implements ITransactionService {
 
         // Generate the new transaction
         TransactionDto transaction = new TransactionDto(
-                createTransactionId(),
-                "INCOME", // Currently default transaction type
-                "New Transaction", // Default name of new transaction
-                0.0, // Income amount
-                0.0, // Expense amount
-                0.0,  // Final amount made after calculations
-                category
         );
         TRANSACTIONS.add(transaction);
         return transaction;
@@ -96,8 +89,8 @@ public class TransactionService implements ITransactionService {
     @Override
     public TransactionDto addIncomeTransaction(int transactionId, double amount) {
         TransactionDto transaction = getTransaction(transactionId);
-        transaction.setAmount(transaction.getAmount() + amount);
-        transaction.setCategroyIsIncomeOrExpense("INCOME");
+        //transaction.setTransactionValue(transaction.getTransactionValue() + amount);
+        transaction.setCategoryIsIncomeOrExpense("INCOME");
         return transaction;
     }
 
@@ -111,8 +104,8 @@ public class TransactionService implements ITransactionService {
     @Override
     public TransactionDto addExpenseTransaction(int transactionId, double amount) {
         TransactionDto transaction = getTransaction(transactionId);
-        transaction.setAmount(transaction.getAmount() - amount);
-        transaction.setCategroyIsIncomeOrExpense("EXPENSE");
+        transaction.setTransactionValue(transaction.getTransactionValue());
+        transaction.setCategoryIsIncomeOrExpense("EXPENSE");
         return transaction;
     }
 
@@ -127,8 +120,8 @@ public class TransactionService implements ITransactionService {
         TransactionDto transaction = getTransaction(transactionId);
 
         // Check if INCOME transaction
-        if("INCOME".equalsIgnoreCase(transaction.getCategroyIsIncomeOrExpense())) {
-            return transaction.getAmount();
+        if("INCOME".equalsIgnoreCase(transaction.getCategoryIsIncomeOrExpense())) {
+            return transaction.getTransactionValue();
         }
 
         // Return 0 if not associated transaction type
@@ -146,8 +139,8 @@ public class TransactionService implements ITransactionService {
         TransactionDto transaction = getTransaction(transactionId);
 
         // Check if EXPENSE transaction
-        if("EXPENSE".equalsIgnoreCase(transaction.getCategroyIsIncomeOrExpense())) {
-            return transaction.getAmount();
+        if("EXPENSE".equalsIgnoreCase(transaction.getCategoryIsIncomeOrExpense())) {
+            return transaction.getTransactionValue();
         }
 
         // Return 0 if not associated transaction type
@@ -164,8 +157,8 @@ public class TransactionService implements ITransactionService {
     public double getTotalByCategory(String category) {
         double total = 0;
         for(TransactionDto transaction : TRANSACTIONS) {
-            if(transaction.getTransactionCategory().equals(category)) {
-                total += transaction.getAmount();
+            if(transaction.getCategoryIsIncomeOrExpense().equals(category)) {
+                total += transaction.getTransactionValue();
             }
         }
         return total;
@@ -199,11 +192,11 @@ public class TransactionService implements ITransactionService {
             if(transaction.getTransactionID() == id) {
 
                 if(income != null) {
-                    transaction.setAmount(income);
+                    //transaction.setTransactionValue(income);
                 }
 
                 if(expense != null) {
-                    transaction.setAmount(expense);
+                    //transaction.setTransactionValue(expense);
                 }
 
                 return;
