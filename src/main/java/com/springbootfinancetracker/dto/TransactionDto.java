@@ -13,6 +13,6 @@ public class TransactionDto {
     private String transactionName;
     private Double incomeAmount;
     private Double expenseAmount;
-    private Double amount;
+    private Double amount; // Total after income - expense
     private String transactionCategory;
 }
