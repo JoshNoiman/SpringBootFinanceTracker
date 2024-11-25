@@ -90,15 +90,21 @@
             margin-bottom: 10px;
         }
 
-        .goal-status {
-            font-size: 1rem;
-            font-weight: bold;
-            padding: 5px 10px;
-            border-radius: 5px;
-            background-color: #6BB7FF;
+        .progress {
+            height: 20px;
+            background-color: #e9ecef;
+            border-radius: 10px;
+            overflow: hidden;
+            margin-bottom: 10px;
+        }
+
+        .progress-bar {
+            height: 100%;
+            text-align: center;
+            line-height: 20px;
             color: white;
-            display: inline-block;
-            margin-top: 10px;
+            background-color: #4A90E2;
+            transition: width 0.4s ease;
         }
 
         .form-container {
@@ -214,6 +220,7 @@
             const goalStatus = goal.progress >= goal.goal ? "Goal Met!" : "In Progress";
 
             const countdown = calculateCountdown(goal.dueDate);
+            const progressPercentage = Math.min((goal.progress / goal.goal) * 100, 100);
 
             goalCard.innerHTML = `
                 <div class="goal-title">${goal.category}</div>
@@ -221,6 +228,9 @@
                 <div class="goal-detail"><strong>Progress:</strong> $${goal.progress}</div>
                 <div class="goal-detail"><strong>Due Date:</strong> ${goal.dueDate}</div>
                 <div class="goal-detail"><strong>Countdown:</strong> ${countdown}</div>
+                <div class="progress">
+                    <div class="progress-bar" style="width: ${progressPercentage}%;">${progressPercentage.toFixed(1)}%</div>
+                </div>
                 <div class="goal-status">${goalStatus}</div>
                 <button class="btn-small" onclick="updateProgress(${index})">Update Progress</button>
                 <button class="btn-small" onclick="deleteGoal(${index})">Delete</button>
