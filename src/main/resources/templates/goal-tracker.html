@@ -186,6 +186,23 @@
 <script>
     let goals = [];
 
+    function calculateCountdown(dueDate) {
+        const now = new Date();
+        const targetDate = new Date(dueDate);
+        const difference = targetDate - now;
+
+        if (difference <= 0) {
+            return "Time's up!";
+        }
+
+        const days = Math.floor(difference / (1000 * 60 * 60 * 24));
+        const hours = Math.floor((difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        const minutes = Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60));
+        const seconds = Math.floor((difference % (1000 * 60)) / 1000);
+
+        return `${days}d ${hours}h ${minutes}m ${seconds}s remaining`;
+    }
+
     function renderGoals() {
         const goalContainer = document.getElementById("goal-container");
         goalContainer.innerHTML = "";
@@ -196,11 +213,14 @@
 
             const goalStatus = goal.progress >= goal.goal ? "Goal Met!" : "In Progress";
 
+            const countdown = calculateCountdown(goal.dueDate);
+
             goalCard.innerHTML = `
                 <div class="goal-title">${goal.category}</div>
                 <div class="goal-detail"><strong>Target:</strong> $${goal.goal}</div>
                 <div class="goal-detail"><strong>Progress:</strong> $${goal.progress}</div>
                 <div class="goal-detail"><strong>Due Date:</strong> ${goal.dueDate}</div>
+                <div class="goal-detail"><strong>Countdown:</strong> ${countdown}</div>
                 <div class="goal-status">${goalStatus}</div>
                 <button class="btn-small" onclick="updateProgress(${index})">Update Progress</button>
                 <button class="btn-small" onclick="deleteGoal(${index})">Delete</button>
@@ -208,6 +228,8 @@
 
             goalContainer.appendChild(goalCard);
         });
+
+        setTimeout(renderGoals, 1000); // Refresh countdown every second
     }
 
     function addGoal(event) {
