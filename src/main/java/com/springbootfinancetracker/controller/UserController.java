@@ -1,6 +1,9 @@
 package com.springbootfinancetracker.controller;
 
 
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -11,19 +14,21 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.springbootfinancetracker.dto.UserDto;
+import com.springbootfinancetracker.service.IUserService;
 
 /**
  * User class contoller
  */
 @RestController
 public class UserController {
+    @Autowired IUserService userService;
     /**
      * 
      * @return all users
      */
     @GetMapping("/user")
-    public ResponseEntity fetchAllUsers() {
-        return new ResponseEntity(HttpStatus.OK);
+    public List<UserDto> fetchAllUsers() throws Exception {
+        return userService.fetchAllUsers();
     }
     /**
      * 
@@ -39,9 +44,9 @@ public class UserController {
      * @param user
      * @return newly created user
      */
-    @PostMapping(value="/user", consumes="application/jason", produces="application/jason")
-    public UserDto createUser(@RequestBody UserDto user) {
-        return user;
+    @PostMapping(value="/user", consumes="application/json", produces="application/json")
+    public UserDto createUser(@RequestBody UserDto user) throws Exception{
+        return userService.saveUser(user);
     }
     /**
      * 

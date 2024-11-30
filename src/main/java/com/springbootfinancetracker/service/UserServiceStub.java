@@ -4,6 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.springbootfinancetracker.dao.IUserDao;
+import com.springbootfinancetracker.dao.IUserDaoDb;
 import com.springbootfinancetracker.dto.UserDto;
 
 import java.util.List;
@@ -15,7 +16,7 @@ import java.util.List;
 public class UserServiceStub implements IUserService {
 
     @Autowired
-    private IUserDao userDao;
+    private IUserDaoDb userDao;
 
     /**
      * 
@@ -28,7 +29,7 @@ public class UserServiceStub implements IUserService {
      * 
      * @param userDao
      */
-    public UserServiceStub(IUserDao userDao) {
+    public UserServiceStub(IUserDaoDb userDao) {
         this.userDao = userDao;
     }
 
@@ -37,7 +38,7 @@ public class UserServiceStub implements IUserService {
      */
     @Override
     public UserDto fetchById(int id) throws Exception {
-        return userDao.fetchUserById(id);
+        return userDao.findById(id).orElseThrow();
     }
 
     /**
@@ -47,7 +48,7 @@ public class UserServiceStub implements IUserService {
      */
     @Override
     public List<UserDto> fetchAllUsers() throws Exception {
-        return userDao.fetchAll();
+        return userDao.findAll();
     }
 
     /**
@@ -55,7 +56,7 @@ public class UserServiceStub implements IUserService {
      */
     @Override
     public UserDto saveUser(UserDto newUser) throws Exception {
-        return userDao.saveUser(newUser);
+        return userDao.save(newUser);
     }
 
 }
